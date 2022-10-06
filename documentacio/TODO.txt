@@ -1,0 +1,11 @@
+LIB_API(Axios Mode)
+
+PokeCard
+
+ThemeSelector
+
+Filtre
+
+Vistes
+
+Formulari

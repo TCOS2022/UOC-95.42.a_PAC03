@@ -1,0 +1,48 @@
+/*
+// **************************************************** //
+    TITOL: plantilla_layout.css
+
+    DATA/VERSIO: YYYYMMDD / 1.0.0
+    AUTOR:
+
+    DESCRIPCIO:
+
+    Arxiu que defineix el layout de la app
+
+    import: plantilla_colors.css
+
+    format:  scheme_layout.css
+    exemple: scheme_layout.css
+
+// **************************************************** //
+*/
+
+/* BASIC RESET *************************************************************** */
+/* Nota: substituir per normalize.css si escau */
+*,*::after,*::before{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COLORS I FONTS ************************************************************ */
+/* Importem les variables dels atributs del tema */
+/* @import "./plantilla_colors.css"; */
+
+/* BODY ********************************************************************** */
+body{
+    /* Definim un 'default' per tots els elements de la web */
+    background-color: var(--bg_color00);
+    color: var(--font_color00);
+    font-family: var(--font-family00);
+    font-size: var(--font-size00);
+}
+
+/* HEADER ******************************************************************** */
+/* MAIN ********************************************************************** */
+/* MAIN - HOME *************************************************************** */
+/* MAIN - LLISTAT ************************************************************ */
+/* MAIN - DETALL ************************************************************* */
+/* MAIN - COMBAT ************************************************************* */
+/* MAIN - CONTACTE *********************************************************** */
+/* FOOTER ******************************************************************** */

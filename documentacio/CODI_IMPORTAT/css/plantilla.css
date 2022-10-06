@@ -1,0 +1,39 @@
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 25px;
+}
+
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    padding: 5px;
+}
+
+header ul li.li_theme ul li.theme_selected {
+    background-color: var(--color4); 
+    color:var(--font_color);
+    font-size: 125% rem;
+    font-weight: bolder;
+}
+
+header ul li.li_theme ul li:hover {
+    background-color: var(--color4);
+    color: var(--font_color);
+}

@@ -1,0 +1,89 @@
+/*
+// **************************************************** //
+    TITOL: plantilla_colors.css
+
+    DATA/VERSIO: YYYYMMDD / 1.0.0
+    AUTOR:
+
+    DESCRIPCIO:
+
+    Arxiu que fa de plantilla per definir els diferents color_scheme_TEMA.css
+
+    Aqui definim SOLS els colors que seran importats al layout general
+    Aquest arxiu defineix SOLS ELS COLORS per un tema determinat 
+
+    format:  colors_NOMESQUEMA.css
+    exemple: colors_INFERNO.css
+
+// **************************************************** //
+*/
+
+/* Importem les fonts que volem fer servir 
+    Plantilla definicio de fonts 
+        @font-face {
+        font-family: EntezareZohoor2;
+        src: url('fonts/EntezareZohoor2.eot');
+        src: url('fonts/EntezareZohoor2.eot?') format('☺'),
+            url('fonts/EntezareZohoor2.woff') format('woff'),
+            url('fonts/EntezareZohoor2.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+    Nota: fem servir el "font-family" per cridar-la
+
+    Un exemple: 
+        @font-face{
+            font-family: inferno;
+            src: url('../media/fonts/royal_inferno/Royal_Inferno.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+*/
+
+/* Definim els nom de les variables que farem servir a tot el projecte */
+
+:root{
+    /* Colors de fons/backgrounds */
+    --bg_color00: #FAFAFA;
+    --bg_color01: #0A0A0A;
+    --bg_color02: darkred;
+    --bg_color03: rgb(250,250,250);
+    --bg_color04: rgb(250,250,250);
+    --bg_color05: rgb(250,250,250);
+    --bg_color06: rgb(250,250,250);
+    --bg_color07: rgb(250,250,250);
+    --bg_color08: rgb(250,250,250);
+    --bg_color09: rgb(250,250,250);
+
+    /* Colors de text */
+    --font_color00: #0A0A0A;
+    --font_color01: #FAFAFA;
+    --font_color02: gold;
+    --font_color03: rgb(37, 44, 67);
+    --font_color04: rgb(37, 44, 67);
+    --font_color05: rgb(37, 44, 67);
+    --font_color06: rgb(37, 44, 67);
+    --font_color07: rgb(37, 44, 67);
+    --font_color08: rgb(37, 44, 67);
+    --font_color09: rgb(37, 44, 67);
+   
+    /* Altres colors (borders, etc etc ....) */
+    --color01: red;
+    --color02: yellow;
+    --color03: green;
+    --color04: blue;
+    --color05: orange;
+    --color06: maroon;
+    --color07: lightgrey;
+    --color08: darkgrey;
+    --color09: grey;
+
+    /* Altres definicions per exemple atributs de fonts ... */
+    --font-size00: 16px;
+    --font-size01: 16px;
+    --font-size02: 16px;
+    --font-family00: arial;
+    --font-family01: heaven;
+    --font-family02: inferno;
+}
