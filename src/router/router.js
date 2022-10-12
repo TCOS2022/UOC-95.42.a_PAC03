@@ -22,7 +22,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 /* Definim les importacions dels moduls de destinacio */
 import Home      from "@/views/pages/homeV2.vue";
-import Llistat   from "@/views/pages/llistat.vue";
+import Llistat   from "@/views/pages/llistatV1.1.vue";
 import Detall    from "@/views/pages/detall.vue";
 import Combat    from "@/views/pages/combat.vue";
 import Contacte  from "@/views/pages/contact.vue";

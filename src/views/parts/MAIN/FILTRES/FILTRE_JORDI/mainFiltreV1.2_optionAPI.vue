@@ -68,29 +68,27 @@
 <script>
 /* Definim IMPORTS */
 
-import { registerRuntimeHelpers } from '@vue/compiler-core'
-
 /* Definim EXPORT */
 export default {
     /* -- OptionAPI FORMAT -- */
     /* Definim un nom, opcional, pel component */
-    name: "- mainFiltreV1.2_optionAPI -",
+    name: "mainFiltreV1.2_optionAPI",
 
     /* Definim les props que son les ENTRADES al component, JA son REACTIVES */
     props: {
         toFilter:{
-                    type: Array,
-                    default: ["alias", "Sherezade", "Cedric", "Humor", "She-Hulk", "Atlante", "Humbertus", "alita", "Chenoa", "Shakira", "Chewaaka", "Hum"]
+            type: Array,
+            default: ["alias", "Sherezade", "Cedric", "Humor", "She-Hulk", "Atlante", "Humbertus", "alita", "Chenoa", "Shakira", "Chewaaka", "Hum"]
         }
     },
 
     /* Definim les variables "locals" del component i que son "exportades" al template */
-    data() {
+    data:function(){
         return {
             ENTRADA:this.toFilter, // Fem servir this.variable per referir-nos a les variables definides al objecte
-            SORTIDA:this.toFilter,
+            SORTIDA:"",
             FILTRE:"",
-            FILTRE_OPTIONS:"OP1",
+            FILTRE_OPTIONS:"",
         }
     },
 
@@ -99,6 +97,13 @@ export default {
 
     /* Funcions del component */
     methods: {
+        printVariables: function(){
+            console.log("Imprimint valors de les variables")
+            console.log("FILTRE -> toFilter: ", this.toFilter)
+            console.log("FILTRE -> ENTRADA:  ", this.ENTRADA)
+            console.log("FILTRE -> FILTRE:   ", this.FILTRE)
+            console.log("FILTRE -> SORTIDA:  ", this.SORTIDA)
+        },
         /* Funcio qeu envia dades, a traves del EMIT, al parent, la crida el @keyup del input del form */
         from_Filter: function(){
             console.log(" Funcio qeu s  executa al evnet KEYUP del input ")
@@ -107,20 +112,22 @@ export default {
             this.$emit("fromFilter", this.SORTIDA)
         },
         /* Funcio setup - initialize */
-        filtre_initializer: async function (){
+        filtre_initializer: async function(){
             /**
             * Funcio de setup
             * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
             */
             
-            console.log("INICI FUNCIO: INITIALIZER ")
-            
+            console.log("INICI FUNCIO: FILTRE INITIALIZER ")
+            //this.printVariables()
+            //this.simular_output()
+
             /* Posem els valors per defecte */ 
             console.log("Asignant valors al inici ...")
             this.ENTRADA = ["alias", "beto", "Cedric", "Humor", "Atlante", "alita", "Chenoa", "Shakira", "Chewaaka"]
             this.ENTRADA = this.toFilter
             this.SORTIDA = this.tofilter
-            this.FILTRE  = []
+            this.FILTRE  = ""
             this.FILTRE_OPTIONS = "OP1"
 
             /* activem la opcio del op1 .... */ 
@@ -142,9 +149,10 @@ export default {
 
             /* Mostrem sortida */
             console.log("Mostrant dades de sortida ...")
-            //this.simular_output()
+            this.ENTRADA=this.toFilter
+            this.simular_output()
             //console.log("INICI FUNCIO: " + arguments.callee.name + " / FINAL")
-            console.log("FINAL FUNCIO: INITIALIZER")
+            console.log("FINAL FUNCIO: FILTRE INITIALIZER")
         },
         /* Funcio que simula la sortida enviant els resultats al form */
         simular_output: function (){
@@ -164,7 +172,8 @@ export default {
             sortida.innerHTML = this.SORTIDA
 
             /* I fianalment retornem al exterior el resultat */
-            from_Filter()
+            this.printVariables()
+            this.from_Filter()
         },
         /* Funcions de buscar un char en un string */
         searchCharInString: function (lletraBuscada,paraulaEntrada){
@@ -237,14 +246,18 @@ export default {
             let resultat0=false
             let sortida0 = []
             let contadorLletres = 0
-            let filtre0 = FILTRE
+            console.log("FILTRE/ENTRADA ES:")
+            console.log(this.FILTRE,this.ENTRADA)
+            console.log(typeof(this.FILTRE),typeof(this.ENTRADA),typeof(this.toFilter))
+            let filtre0 = this.FILTRE
+            let entrada0 = this.ENTRADA
             let paraula0 = ""
             let paraula1 = []
             /* Mirem cuants caracters em de comparar */
             let filtre1 = filtre0.split("")
-            let maxCharsTested = filtre0.length
+            let maxCharsTested = filtre0.length()
             /* Revisem CADA element de la llista de ENTRADA */ 
-            ENTRADA.forEach(paraula0 => {
+            (entrada0).forEach(paraula0 => {
                 /* Convertim la praula del array de entradas en un array .... */
                 console.log("COMPARANT FILTRE/PARAULA [" + filtre0 + "] AMB [" + paraula0 + "]")
                 paraula1 = paraula0.split('')
@@ -278,7 +291,7 @@ export default {
             console.log("FILTRE :  ", this.FILTRE)
             console.log("SORTIDA:  ", sortida0)
             this.SORTIDA = sortida0
-            simular_output()
+            this.simular_output()
         },
         /* Funcio de filtratge */
         validar_filtre: function (){
@@ -297,15 +310,15 @@ export default {
                     case ("OP1"):
                         // comença igual que el filtre ;
                         // op1(FILTRE);
-                        op1V0()
+                        this.op1V0()
                         break;
                     case ("OP2"):
                         // inclou el filtre ;
-                        op2(FILTRE);
+                        this.op2(FILTRE);
                         break;
                     case ("OP3"):
                         // inclou lletres del filtre ;
-                        op3(FILTRE);
+                        this.op3(FILTRE);
                         break;
                     default:
                         //default statement or expression;
@@ -314,7 +327,7 @@ export default {
                 /* retornem resultats */
                 console.log("OPCIO ACTIVA -> ", this.FILTRE_OPTIONS)
                 console.log("FILTRATGE    -> ", this.FILTRE)
-                simular_output()
+                this.simular_output()
         },
         /* Funcions dels radioBtns */
         validar_radioBtn: function (event){
