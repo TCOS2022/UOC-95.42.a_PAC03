@@ -20,7 +20,7 @@
 /* Funcions auxiliars */
 /* **************************************************** */
 
-function randomInteger(min1,max1){
+export function randomInteger(min1,max1){
     /**
      * Funcio que calcula un nº integer en el domini TANCAT [min,max]
      * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
@@ -35,7 +35,7 @@ function randomInteger(min1,max1){
     return resultat0
 }
 
-function sortArrayWithNumbers(array1){
+export function sortArrayWithNumbers(array1){
     /**
        * Funcio que ordena de PETIT a GRAN un array de numeros
        * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
@@ -43,16 +43,16 @@ function sortArrayWithNumbers(array1){
    
     /* OPCIO 1 amb: numArray.sort((a, b) => a - b) */
     /* OPCIO 2 amb: definim un typed array de integers, i lalvors funciona .sort() correctament */
-    console.log("INICI FUNCIO: " + arguments.callee.name)
+    //console.log("INICI FUNCIO: " + arguments.callee.name)
 
     // Definim variaables locals
     let resultat0 = array1.sort((a, b) => a - b)
     //  Retornem el resultat 
-    console.log("FUNCIO: " + arguments.callee.name + " / RETORN: ", resultat0)   
+    // console.log("FUNCIO: " + arguments.callee.name + " / RETORN: ", resultat0)   
     return resultat0
 }
 
-function checkExists(value1,arrayItems1){
+export function checkExists(value1, ...arrayItems1){
     /**
        * Funcio que evalua TRUE/FALSE segons un item JA estigui en un array numeric
        * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
@@ -60,6 +60,7 @@ function checkExists(value1,arrayItems1){
 
     // Definim variables locals
     let numeroitems = arrayItems1.length
+    let resultat0=false
     // Repasem el array a veure si tenim el valor ....
     // NOTA: SI el array esta buit, el seu .length = 0 !!!!!!!
     // Comprovem que tingui ALGUN valor !!!!!
@@ -79,7 +80,7 @@ function checkExists(value1,arrayItems1){
     return resultat0
 }
 
-function resumeArray(arrayPokes){
+export function resumeArray(...arrayPokes){
     /* Estructura poke retornat desde api poke: */
     // {}
     /* Definim el objecte que farem servir de plantilla */
@@ -109,13 +110,13 @@ function resumeArray(arrayPokes){
 
 /* Funcions exportables */
 /* **************************************************** */
-function createArrayNoRepeatedValues(min1,max1,items1){
+export function createArrayNoRepeatedValues(min1,max1,items1){
     /**
        * Funcio que crea una ARRAY de n numeros al domini TANCAT [min,max]
        * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
     */
 
-    console.log("FUNCIO: " + arguments.callee.name)
+    //console.log("FUNCIO: " + arguments.callee.name)
 
     // Definimm variables locals
     let resultat = []
@@ -126,7 +127,7 @@ function createArrayNoRepeatedValues(min1,max1,items1){
         valor0 = randomInteger(min1,max1)
         // comprovem si esta al array
         let x1=0
-        while (checkExists(valor0,resultat)){
+        while (checkExists(valor0,...resultat)){
             // Mentre el resultat JA estigui al array, repetim 
             // demanem un nou valor aleatori
             valor0 = randomInteger(min1,max1)
@@ -147,7 +148,7 @@ export function createArrayNoRepeatedValuesSorted(min1,max1,items1){
        * @values , @example, @deprecated, @see, @link, @author, @since, @version, @ignore
     */
    
-    console.log("FUNCIO: " + arguments.callee.name)
+    //console.log("FUNCIO: " + arguments.callee.name)
 
     // Definim variables locals
     let resultat0 = []

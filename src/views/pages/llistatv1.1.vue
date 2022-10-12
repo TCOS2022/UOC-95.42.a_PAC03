@@ -3,7 +3,7 @@
 
     <div>
         <h3>HEADER</h3>
-        <header0 />
+        <header />
     </div>
 
     <div>
@@ -47,53 +47,14 @@
 
 </template>
 
-<script setup>
-/* Mode compositionAPI - setup */
-    import { 
-        //defineEmits,  // Permet definir els emits
-        //defineProps,  // Permet dfinir els props
-        ref,            // Fa que valors primitius siguin REATIUS
-        reactive,       // Fa que arrays i objectes siguin REACTIUS
-        onMounted,      // Fa que tinguem disponible el hook "mounted"
-        onUpdated       // Fa que tinguem disponible el hook "updated"
-    } from "vue";
+<script>
+/* Mode compositionAPI */
+// Definim imports
+import header from "@/views/parts/HEADER/mainHeaderV2.vue"
+// Definim coses locals
+// Definim exports
 
-    import axios from "axios"
-
-    import {
-        numeroMaximPokesV2, 
-        resumedPokePackV1,
-        pokePackByArrayV2,
-        extractPokeNames,
-    } from "@/assets/js/libs/lib_pokeAPI"
-
-    import {
-        createArrayNoRepeatedValues
-    } from "@/assets/js/libs/lib_Arrays.js"
-    
-    import filtre       from "@/views/parts/main/filtres/filtre_jordi/mainFiltreV1.2_optionAPI.vue"
-    import header0      from "@/views/parts/HEADER/mainHeaderV2.vue"
-    import pokeCard0    from "@/views/parts/POKECARD/pokeCardV2.vue"
-
-    let items = [0,1,2,3,4,5,6,7,8,9]
-    const dadesReactives=reactive(
-        {
-        arrayFiltreIN:[],
-        arrayFiltreOUT:[]
-        }
-    )
-
-    function alRebre(e){
-        console.log("Rebent dades del input del filtre: ", e)
-    }
-
-    onMounted(()=>{
-        console.log("Inicialitzant PAGINA LLISTAT ....")
-        initializer()
-        console.log(" .... PAGINA LLISTAT Inicialitzada!!")
-    })
-
-    async function initializer(){
+async function initializer(){
         /**
          * 
          * Que farem:
@@ -125,7 +86,7 @@
         dadesReactives.arrayFiltreIN = arrayPokesNames
         console.log("dadesFiltre: ", dadesReactives.arrayFiltreIN)
         /* 6 - LOADER OFF / CONTENTS ON */
-    }
+}
 </script>
 
 <style scoped>

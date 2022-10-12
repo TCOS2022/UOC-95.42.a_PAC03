@@ -21,12 +21,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 /* Definim les importacions dels moduls de destinacio */
-import Home     from "@/views/pages/homeV2.vue";
-import Llistat  from "@/views/pages/llistat.vue";
-import Detall   from "@/views/pages/detall.vue";
-import Combat   from "@/views/pages/combat.vue";
-import Contacte from "@/views/pages/contact.vue";
+import Home      from "@/views/pages/homeV2.vue";
+import Llistat   from "@/views/pages/llistat.vue";
+import Detall    from "@/views/pages/detall.vue";
+import Combat    from "@/views/pages/combat.vue";
+import Contacte  from "@/views/pages/contact.vue";
 import pageError from "@/views/pages/pageError.vue";
+import pageTest  from "@/views/pages/paginaTestEmit.vue"
 
 /* Definim  les rutes de destinacio */
 const routes = [
@@ -54,6 +55,11 @@ const routes = [
         path: "/contacte",
         name: "contacte",
         component: Contacte
+    },
+    {
+        path: "/tests",
+        name: "pageTest",
+        component: pageTest
     },
     {
         path: "/error",

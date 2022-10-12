@@ -10,7 +10,7 @@
     Tambe espera un 'viewType' per determinar quina vista volem que generi
     SI no reb res, pintara una vista 'detall' del pokeID=0
 
-    IN  -> <pokeCardV2 :itemArray='[{viewType:”llistat”}, {object pokeAPI}]' />
+    IN  -> <pokeCardV2 :itemView="llistat" :itemData='{viewType:”llistat”}, {object pokeAPI}' />
     OUT ->
 
     USE:
@@ -36,26 +36,26 @@
                     <div class="pokeImg">
                         <div class="pID">
                             <span class="pokeId0">ID:</span>
-                            <span class="pokeId1">[ {{ itemArray[1].poke_id }} ] </span>
+                            <span class="pokeId1">[ {{ itemData.poke_id }} ] </span>
                         </div>
                         <div class="pImg">
-                            <img :src='itemArray[1].imgURL1' alt='Imatge frontal'>
-                            <img :src='itemArray[1].imgURL2' alt='Imatge posterior'>
+                            <img :src='itemData.imgURL1' alt='Imatge frontal'>
+                            <img :src='itemData.imgURL2' alt='Imatge posterior'>
                         </div>
                         <div class="pName">
                             <span class="pokeName0">NOM:</span>
-                            <span class="pokeName1"> [ {{ itemArray[1].poke_nom }} ] </span>
+                            <span class="pokeName1"> [ {{ itemData.poke_nom }} ] </span>
                         </div>
                     </div>
 
                     <div class="pokeData">
                         <div class="pAtk">
                             <span class="pokeAtk0">Atac:</span><br>
-                            <span class="pokeAtk1"> [ {{ itemArray[1].poke_atk }} ] </span>
+                            <span class="pokeAtk1"> [ {{ itemData.poke_atk }} ] </span>
                         </div>
                         <div class="pDef">
                             <span class="pokeDef0">Defensa:</span><br>
-                            <span class="pokeDef1"> [ {{ itemArray[1].poke_def }} ] </span>
+                            <span class="pokeDef1"> [ {{ itemData.poke_def }} ] </span>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="combat">
                     <div class="pokeData">
                         <div class="ptypes">
-                            <span v-for = "(type1) in itemArray[1].poke_types"  class="pokeType1" > [ {{ type1 }} ] </span>
+                            <span v-for = "(type1) in itemData.poke_types"  class="pokeType1" > [ {{ type1 }} ] </span>
                         </div>
                     </div>
                 </div>
@@ -88,42 +88,140 @@
 /* Importacions de components */
 /* Exportacions a template i outbounds */
 export default {
+    /* Nom asignat */
     name: "pokeCardV2",
+    /* Dades rebudes */
     props: {
-        itemArray:{
-            type:[Array,Object],
-            default:[
-                {viewType:"detall"},
-                {poke_id: 0,
+        itemView: {
+            type: String,
+            default: "llistat"
+        },
+        itemDades:{
+            type:Object,
+            default: {
+                poke_id: 0,
                 poke_imgURL1: "media/imatges/pokeCards/imatgeNoDisponible_cuadrada.png",
                 poke_imgURL2: "media/imatges/pokeCards/imatgeNoDisponible_rodona.png",
-                poke_nom: "POKE DEMON MASTER",
+                poke_nom: "POKE-DEMON-MASTER",
                 poke_atk: 999,
                 poke_def: 999,
                 poke_types: ["Terra", "Aire", "Aigua", "Foc", "5º Element"]
                 }
-            ]
         }
+    },
+    /* Metodes */
+    methods:{},
+    /* ¡¡¡¡¡¡ HOOKS !!!!! */
+    mounted(){
+        /* Aquesta funcio s activa CADA cop que s actualiten les dades del component */
+        console.log("[MOUNTING] pokeCard component")
+        console.log("*** LES DADES REBUDES SON: ***")
+        console.log("tipus vista: ", itemView)
+        console.log("Dades rebudes: ", itemData)
+        initializer();
     },
     updated(){
         /* Aquesta funcio s activa CADA cop que s actualiten les dades del component */
         console.log("[UPDATING] pokeCard component")
-        console.log(itemArray)
+        console.log("*** LES DADES REBUDES SON: ***")
+        console.log("tipus vista: ", itemView)
+        console.log("Dades rebudes: ", itemData)
         initializer();
     }
 }
+
 /* Funcions auxiliars */
 function initializer(){
 /* Funcio que:
-            1 - comproba els arguments rebuts
-            2 - determina si ha de fer consulta a la api externa o no
-            3 - comproba si tenim imatges i asigna una per defecte si cal
-            4 - Asigna les dades al array de pokeData
-            5 - pinta la pokeCard
+    1 - comproba els arguments rebuts
+    2 - determina si ha de fer consulta a la api externa o no
+    3 - comproba si tenim imatges i asigna una per defecte si cal
+    4 - Asigna les dades al array de pokeData
+    5 - pinta la pokeCard segons la vista seleccionada
+
+    itemView: "" / "llistat" / "detall" / "combat"
+    itemData: {
+        poke_id: 0,
+        poke_imgURL1: "media/imatges/pokeCards/imatgeNoDisponible_cuadrada.png",
+        poke_imgURL2: "media/imatges/pokeCards/imatgeNoDisponible_rodona.png",
+        poke_nom: "POKE DEMON MASTER",
+        poke_atk: 999,
+        poke_def: 999,
+        poke_types: ["Terra", ...]
+    }   
 */
     console.log("[INITIALIZING] pokeCard component")
-    console.log(itemArray)
+    // 3 - Validem les imatges ...
+    this.itemData.poke_imgURL1 = validarImatges(this.itemData.poke_imgURL1)
+    this.itemData.poke_imgURL2 = validarImatges(this.itemData.poke_imgURL2)
+
+    // 5 - pintem els blocs determinats per la vista
+    activarVistaCard(this.itemView)
 }
+
+function validarImatges(urlIMG){
+    if(urlIMG == ""){
+        // SI no tenim cap imatge, li posem la que tenim per defecte
+        urlIMG = "@/assets/media/imatges/pokeCards/imatgeNoDisponible_cuadrada.png"
+    }else{
+        // Si ja tenim imatge, no fem res
+    }
+    return urlIMG
+}
+
+function activarVistaCard(tipusVista){
+    /** Funcio qeu asigna que s ha de veure i que no segons la vista seleccionada
+     *  Podem rebre: "llistat", "detall", "combat"
+     *  Definim visibilitats per tapa/contingut
+     *  Definim visibilitats tals que si tenim la clase "vistActiva" i una de les 3 altres estara "visible", 
+    */ 
+    
+    /* Definim tots esl divs amb indicador de clase "vistaActiva" */
+    marcadors = document.querySelectorAll(".vistaActiva")
+
+    switch(tipusVista)
+        {
+        case "llistat": /* Vista LLISTAT */
+                        marcadors.forEach((element,index) => {
+                            // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                            if(element.classlist.contains("llistat")){
+                                /* Si tenim la clase activada, mostrem el elemnt */
+                                element.style.display = flex
+                            }else{
+                                /* Si no es de la calse buscada, apaguem el element */
+                                element.style.display = none
+                            }
+                        });
+                        break;
+        case "detall":  /* Vista DETALL */
+                        marcadors.forEach((element,index) => {
+                            // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                            if(element.classlist.contains("detall")){
+                                /* Si tenim la clase activada, mostrem el elemnt */
+                                element.style.display = flex
+                            }else{
+                                /* Si no es de la calse buscada, apaguem el element */
+                                element.style.display = none
+                            }
+                        });
+                        break;
+        case "combat":  /* Vista COMBAT */
+                        marcadors.forEach((element,index) => {
+                            // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                            if(element.classlist.contains("combat")){
+                                /* Si tenim la clase activada, mostrem el elemnt */
+                                element.style.display = flex
+                            }else{
+                                /* Si no es de la calse buscada, apaguem el element */
+                                element.style.display = none
+                            }
+                        });
+                        break;  
+        default:        /* Sense vista */
+                        break;             
+        }
+}
+
 </script>
 
 <style></style>

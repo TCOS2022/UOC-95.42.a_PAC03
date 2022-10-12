@@ -14,7 +14,11 @@
 
     HISTORIC VERSION:
 
-    NOTES:
+    NOTES
+    
+    console.log("INICI FUNCIO: " + arguments.callee.name)
+    console.log("INICI FUNCIO: " + arguments.callee.name + " FINAL RESULT: " + result0)
+    
 // **************************************************** //
 -->
 

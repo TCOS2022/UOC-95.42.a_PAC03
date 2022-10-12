@@ -58,13 +58,13 @@ export default {
             type:[Array],
             default:["alias","beto","Cedric"]               
         }
-    },
-    emits: {
+    }
+    /* ,emits: {
         arrayOutput:{
             type:[Array],
             default:["alias","beto","Cedric"]               
         }
-    }
+    }*/
 }
 
 </script>

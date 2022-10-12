@@ -29,10 +29,13 @@
 // **************************************************** //
 
 
+import axios from "axios"
+
 
 /* *********************************************************************************************** */
 /* DEFINICIO DE LES FUNCIONS AMB FETCH */
 /* *********************************************************************************************** */
+
 
 async function numeroMaximPokesV1(){
     /* Definim algunes variables que podem necessitar */
@@ -86,37 +89,38 @@ async function pokePackByArrayV1(arrayID){
 /* DEFINICIO DE LES FUNCIONS AMB AXIOS */
 /* *********************************************************************************************** */
 
-async function numeroMaximPokesV2(){
+export async function numeroMaximPokesV2(){
     /**
      * 
      */
 
     /* Informem a la consola que comencem ... */
-    console.log("FUNCIO: " + arguments.callee.name + " / INICI")
+    //console.log("FUNCIO: " + arguments.callee.name + " / INICI")
 
     /* Definim algunes variables que podem necessitar */
     const urlAPI         = "https://pokeapi.co/api/v2/"
     const pokemonspecies = "pokemon-species/"
     const pokemondata    = "pokemon/"
-
+    
     /* Demanem el numero maxim de Pokemons a la API */
     let pokedata = await axios.get(urlAPI + pokemonspecies + "?limit=0")  // com retorna una promesa, esperem a rebre el resultat
-    let maxpokes = pokedata.count                                         // Recuperem el count total 
+    console.log("retorn max num pokes", pokedata)
+    let maxpokes = pokedata.data.count                                         // Recuperem el count total 
 
     /* retornem el resultat */
-    console.log("FUNCIO: " + arguments.callee.name + " / RETORN: " + maxpokes)
+    //console.log("FUNCIO: " + arguments.callee.name + " / RETORN: " + maxpokes)
     return maxpokes
 }
 
-async function dadesPokeByIDV2(pokeID){}
+export async function dadesPokeByIDV2(pokeID){}
 
-async function pokePackByArrayV2(arrayPokes){
+export async function pokePackByArrayV2(arrayPokes){
     /**
      * 
      */
 
     /* Informem a la consola que comencem ... */
-    console.log("FUNCIO: " + arguments.callee.name + " / INICI ")
+    //console.log("FUNCIO: " + arguments.callee.name + " / INICI ")
 
     /* Definim algunes variables que podem necessitar */
     const urlAPI         = "https://pokeapi.co/api/v2/"
@@ -128,23 +132,22 @@ async function pokePackByArrayV2(arrayPokes){
     let resultat0 = []
     let resultat1 = []
 
-    /* recorrem el array ... */
-    arrayPokes.forEach(element => {
-        /* Generem les peticions adients */
-        peticio = axios.get(urlAPI + "?pokeID=" + element.ID)
-        /* Les posem en un array */
+    // recorrem el array ... 
+    arrayPokes.forEach((item,index)  => {
+        // Generem les peticions adients, i recuperem ja lsols la aprt de data
+        peticio = axios.get(urlAPI + "pokemon/" + arrayPokes[index]).then(response => response.data)
+        // Les posem en un array 
         peticions.push(peticio)
     });
 
     /* Resolem la peticio en paralel ... */
     resultat0 = await axios.all(peticions)
-
     /* retornem el resultats ... */
-    resultat1 = resumedPokePackV1(resultat0)
-    console.log("Dades obtingudes (raw)", resultat0)
-    console.log("Dades filtrades (filtrades)", resultat1)
-    console.log("FUNCIO: " + arguments.callee.name + " / FI: ")
-    return resultat1
+    //console.log("Dades obtingudes (raw)", resultat0)
+    //resultat1 = resumedPokePackV1(resultat0)
+
+    //console.log("Dades filtrades (filtrades)", resultat1)
+    return resultat0
 }
 
 
@@ -152,7 +155,26 @@ async function pokePackByArrayV2(arrayPokes){
 /* DEFINICIO DE FUNCIONS COMUNS */
 /* *********************************************************************************************** */
 
-async function resumedPokePackV1(arrayPokesRAW){
+export function extractPokeNames(arrayPokes){
+    /**
+     * rebem un array amb les dades ja arreglades
+     * generem un array sols amb els noms
+     */
+
+    let resultat0=[]
+    let nomPoke=""
+
+    // recorrem el array i extreiem els noms pasant-los a un altre array
+    for (let z=0; z<arrayPokes.length; z++){
+        nomPoke = arrayPokes[z].name
+        resultat0.push(nomPoke)
+    }
+
+    // retornem el array ordenat, o no
+    return resultat0.sort()
+}
+
+export async function resumedPokePackV1(arrayPokesRAW1){
     /**
      * 
      * Rebem un array (raw) que ens be en aquest format:
@@ -162,30 +184,36 @@ async function resumedPokePackV1(arrayPokesRAW){
      *  -->> [{},{},{}, ...]
     */
 
-    /* Informem a la consola que comencem ... */
-    console.log("FUNCIO: " + arguments.callee.name + " / INICI ")
-
     /* Definim les variables locals */
-    let item = {}
-    let resultat0 =[]
+    let item1 = {}
+    let resultat10 = []
+    let arrayTipus = []
+    let ntypes = []
 
-    /* Recorrem el el array de entrada i anem construint ele elments de sortida */
-    arrayPokesRAW.forEach(element => {
-        /* recuperem el ID */
-            item.id = element.id 
-        /* recuperem imgFrontURL */
-        /* recuperem imgBackURL */
-        /* recuperem name */
-        /* recuperem pokeAtk */
-        /* recuperem pokeDef */
-        /* recuperem els tipus */
-        /* Afegim el item al array de resultats .... */
-        resultat0.push(item)
-    });
+    // Recorrem el objecte de entrada i anem construint ele elements de sortida
+    for(let x1=0; x1<arrayPokesRAW1.length; x1++){
+        item1={}
+        item1.id             = arrayPokesRAW1[x1].id
+        item1.imgFrontURL    = arrayPokesRAW1[x1].sprites.front_default
+        item1.imgBackURL     = arrayPokesRAW1[x1].sprites.back_default
+        item1.name           = arrayPokesRAW1[x1].name 
+        item1.pokeAtk        = arrayPokesRAW1[x1].stats[1].base_stat
+        item1.pokeDef        = arrayPokesRAW1[x1].stats[2].base_stat
+        ntypes               = arrayPokesRAW1[x1].types.length
+        // NOTA: types es un array, els noms el podem obtenir amb: .types[x].type.name
+        // Extreurem els noms i els posem en un array
+        arrayTipus = []
+        for(let y=0; y<ntypes; y++){
+            arrayTipus.push(arrayPokesRAW1[x1].types[y].type.name)
+        }
+        item1.types1 = arrayTipus
+        // I finalment fiquem totes els dades en un array de objectes
+        //console.log("item -> ", item1)
+        resultat10.push(item1)
+    }
 
     /* Retornem el resultat i informem .... */
-    console.log("Dades rebudes: ", arrayPokesRAW)
-    console.log("dades procesades: ", resultat0)
-    console.log("FUNCIO: " + arguments.callee.name + " / FI ")
-    return resultat0
+    console.log("resumedPokePacked -> Dades rebudes: ", arrayPokesRAW1)
+    console.log("resumedPokePacked -> dades procesades: ", resultat10)
+    return resultat10
 }
