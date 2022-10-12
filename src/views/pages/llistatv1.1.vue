@@ -16,7 +16,7 @@
         <div class="filtratge">
             <h4>FILTRE</h4>
             <!-- "@"" son els emits i els ":" son els props  :dadesArray="['A','B','C']" -->
-            <filtre @fromFilter="alRebre()" :toFilter="dadesReactives.arrayFiltreIN" />   
+            <filtre1 @fromFilter="alRebre1()" :toFilter="perEnviar1()" />   
             <br><br>
             <p>
                 Resultats sense filtrar:<br>
@@ -31,13 +31,11 @@
         <div class="llistat10">
             <h4>LLISTAT</h4>
             <br><br>
-            <!--
             <ul>
                 <li v-for="item in items">
-                    <pokeCard0 />
+                    <pokeCard />
                 </li>
             </ul>
-            -->
         </div>
     </div>
 
@@ -48,12 +46,24 @@
 </template>
 
 <script>
-/* Mode compositionAPI */
-// Definim imports
-import header from "@/views/parts/HEADER/mainHeaderV2.vue"
-// Definim coses locals
-// Definim exports
+/* Mode API */
+// Definim imports **********************************************************************
+    import {
+        numeroMaximPokesV2, 
+        resumedPokePackV1,
+        pokePackByArrayV2,
+        extractPokeNames,
+    } from "@/assets/js/libs/lib_pokeAPI"
 
+    import {
+        createArrayNoRepeatedValues
+    } from "@/assets/js/libs/lib_Arrays.js"
+    
+    import filtre1     from "@/views/parts/MAIN/FILTRES/FILTRE_JORDI/mainFiltreV1.2_optionAPI.vue"
+    import header      from "@/views/parts/HEADER/mainHeaderV2.vue"
+    import pokeCard    from "@/views/parts/POKECARD/pokeCardV2.vue"
+
+// Definim coses locals *****************************************************************
 async function initializer(){
         /**
          * 
@@ -87,6 +97,21 @@ async function initializer(){
         console.log("dadesFiltre: ", dadesReactives.arrayFiltreIN)
         /* 6 - LOADER OFF / CONTENTS ON */
 }
+
+// Definim exports **********************************************************************
+export default {
+    name: "llistatV1.1.vue",
+    components: {header, filtre, pokeCard},
+    props:{},
+    data: ()=>{},
+    methods:{},
+    // **** HOOKS !!!! ****
+    created(){},
+    mounted(){},
+    updated(){}
+
+}
+
 </script>
 
 <style scoped>
