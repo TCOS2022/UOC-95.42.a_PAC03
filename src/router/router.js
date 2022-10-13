@@ -28,6 +28,7 @@ import Combat    from "@/views/pages/combat.vue";
 import Contacte  from "@/views/pages/contact.vue";
 import pageError from "@/views/pages/pageError.vue";
 import pageTest  from "@/views/pages/paginaTestEmit.vue"
+import Llistat2  from "@/views/pages/llistatv1.2.vue"
 
 /* Definim  les rutes de destinacio */
 const routes = [
@@ -59,7 +60,7 @@ const routes = [
     {
         path: "/tests",
         name: "pageTest",
-        component: pageTest
+        component: Llistat2
     },
     {
         path: "/error",

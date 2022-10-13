@@ -156,7 +156,7 @@ function initializer(){
     this.itemData.poke_imgURL2 = validarImatges(this.itemData.poke_imgURL2)
 
     // 5 - pintem els blocs determinats per la vista
-    activarVistaCard(this.itemView)
+    //activarVistaCard(this.itemView)
 }
 
 function validarImatges(urlIMG){

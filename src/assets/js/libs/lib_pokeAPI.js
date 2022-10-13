@@ -173,7 +173,30 @@ export function extractPokeNames(arrayPokes){
     // retornem el array ordenat, o no
     return resultat0.sort()
 }
+export async function extractPokeNames2(arrayPokes){
+    /**
+     * rebem un array amb les dades ja arreglades
+     * generem un array sols amb els noms
+     */
 
+    let resultat0=[]
+    let tempPoke={}
+    let posPoke =0
+    let nomPoke=""
+
+    // recorrem el array i extreiem els noms pasant-los a un altre array
+    for (let z=0; z<arrayPokes.length; z++){
+        nomPoke = arrayPokes[z].name
+        posPoke = z
+        tempPoke["id"] = posPoke
+        tempPoke['name'] = nomPoke
+        resultat0.push(tempPoke)
+        tempPoke={}
+    }
+    // retornem el objecte ordenat, o no
+    console.log("Object amb els noms del pokes: ", resultat0)
+    return resultat0
+}
 export async function resumedPokePackV1(arrayPokesRAW1){
     /**
      * 
