@@ -15,7 +15,7 @@
     <div>
         <h3>CONTENTS</h3>
         <!-- <filtreIllistat01 /> -->
-        <llistatAmbFiltre />
+        <combatAmbFiltre />
     </div>
 
     <div>
@@ -30,12 +30,12 @@
 // Definim imports **********************************************************************
     // Components
     import header01   from "@/views/parts/HEADER/mainHeaderV2.vue"
-    import llistatAmbFiltre from "@/components/llistatAmbFiltre.vue"
+    import combatAmbFiltre from "@/components/combatAmbFiltre.vue"
 
 // Definim exports **********************************************************************
 export default {
     name: "llistatV1.2",
-    components: {header01, llistatAmbFiltre}
+    components: {header01, combatAmbFiltre}
 }    
 </script>
 

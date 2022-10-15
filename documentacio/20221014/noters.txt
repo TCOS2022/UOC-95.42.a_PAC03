@@ -1,0 +1,13 @@
+FAIL: v-for no es dinamic i no s actualitza quant canvies la variable.
+SOLVE: doncs en comptes de fer el v-for directament, l' encapsulem en una vista a la que li
+	passem les dades del v-for i llavors si qeu, com que quant canvien les dades es repinta la vista, tenim un v-for dinamic
+
+FAIL: Desordre en el initializer
+SOLVE: Resulta que PRIMER es munten TOTS els components .... i despres es munta la pagina, aixi
+	que al solucio es donar als components valors per defecte amb les props, suficients pq es 	pugui activar sense mes problemes, i despres l actualizem a les dades "bones"
+
+FAIL: Creidar funcions dintre del script pero fora del export
+SOLVE: rapid? integrat TOTES les funcions dintre de methods per cridarles despres amb this, 	igual que les vairables de props i data. De fet si qeue s poden deixar afora, pero es un lio 	per referenciarles pq a fora no funcionen amb this ... sino amb $()
+
+FAIL: pasar munts de dades via props o emits
+SOLVE: fem servir una funcio que retorni els valors

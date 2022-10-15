@@ -1,5 +1,3 @@
-
-
 <template>
 <div id="blocFilter">
     <h2> BLOC DEL FILTRE </h2>
@@ -43,7 +41,7 @@
         <h2> BLOC DE LES POKECARDS </h2>
         <br><br>
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->
-        <pokeLlistat itemView="llistat" :itemData1="enviarDadesAlLlistat()"/>
+        <pokeLlistat itemView1="combat" :itemData1="enviarDadesAlLlistat()"/>
     </div>
 </div>
 </template>

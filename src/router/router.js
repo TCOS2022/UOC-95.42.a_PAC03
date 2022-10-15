@@ -23,12 +23,13 @@ import { createRouter, createWebHistory } from "vue-router";
 /* Definim les importacions dels moduls de destinacio */
 import Home      from "@/views/pages/homeV2.vue";
 import Llistat   from "@/views/pages/llistatV1.1.vue";
+import Llistat2  from "@/views/pages/llistatv1.2.vue"
 import Detall    from "@/views/pages/detall.vue";
 import Combat    from "@/views/pages/combat.vue";
+import Combat2   from "@/views/pages/combatV1.2.vue";
 import Contacte  from "@/views/pages/contact.vue";
 import pageError from "@/views/pages/pageError.vue";
 import pageTest  from "@/views/pages/paginaTestEmit.vue"
-import Llistat2  from "@/views/pages/llistatv1.2.vue"
 
 /* Definim  les rutes de destinacio */
 const routes = [
@@ -40,7 +41,8 @@ const routes = [
     {
         path: "/llistat",
         name: "listat",
-        component: Llistat
+        //component: Llistat
+        component: Llistat2
     },
     {
         path: "/detall",
@@ -50,7 +52,8 @@ const routes = [
     {
         path: "/combat",
         name: "combat",
-        component: Combat
+        //component: Combat
+        component: Combat2
     },
     {
         path: "/contacte",
@@ -60,7 +63,8 @@ const routes = [
     {
         path: "/tests",
         name: "pageTest",
-        component: Llistat2
+        component: pageTest
+        //component: Llistat2
     },
     {
         path: "/error",
