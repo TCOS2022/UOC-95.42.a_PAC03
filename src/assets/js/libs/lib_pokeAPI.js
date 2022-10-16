@@ -112,7 +112,9 @@ export async function numeroMaximPokesV2(){
     return maxpokes
 }
 
-export async function dadesPokeByIDV2(pokeID){}
+export async function dadesPokeByIDV2(pokeID){
+    /** Obtenim les dades de un pokeitem a partir de la seva id */
+}
 
 export async function pokePackByArrayV2(arrayPokes){
     /**
@@ -239,4 +241,16 @@ export async function resumedPokePackV1(arrayPokesRAW1){
     console.log("resumedPokePacked -> Dades rebudes: ", arrayPokesRAW1)
     console.log("resumedPokePacked -> dades procesades: ", resultat10)
     return resultat10
+}
+export function extractPokeDataFromID(pokeid,arrayPokes){
+    /** funcio qeu recupera les dades del poke amb id:pokeid */
+    console.log("Extreient dataPoke from pokeArray");
+    console.log("ID buscat: ", pokeid)
+    console.log("Array de dades: ", arrayPokes )
+    arrayPokes.forEach(item =>{
+        if(item.id == pokeid){
+            // JA tenim el poke buscat, retornem les dades i acabem la funcio
+            return item
+        }
+    });
 }

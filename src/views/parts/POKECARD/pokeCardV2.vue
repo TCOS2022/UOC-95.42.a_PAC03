@@ -71,7 +71,8 @@
 
                 <div class="llistat">
                     <div class="pokeControls">
-                        <button>MES DADES</button>
+                        <!-- asignem el event aqui amteix i no cal fer-ho via addEvents al initializaer -->
+                        <button v-on:click="btnDetall">MES DADES !!</button>
                     </div>
                 </div>
 
@@ -121,6 +122,7 @@ export default {
     },
     /* Metodes */
     methods:{
+        // Metodes generals
         recoverURLImage:function(z){
             if(z==1){return this.itemData.poke_imgURL1}
             if(z==2){return this.itemData.poke_imgURL2}
@@ -215,7 +217,17 @@ export default {
                 default:        /* Sense vista */
                                 break;             
                 }
+        },
+        // Metodes per vista llistat -> btnDetall 
+        btnDetall: function (e){
+            // Tot el qeu ha de fer es anar a la vista detall amb les dades del poke
+            let itemView = "detall"
+            console.log("Anem al detall del poke id: ",e)
+            //let itemData = this.ArrayPokes[0]
         }
+        // Metodes per vista detall  -> btnRetorn
+        // Metodes per vista combat  -> clickOverTapa
+        //                           -> combat
     },
     /* ¡¡¡¡¡¡ HOOKS !!!!! */
     mounted(){

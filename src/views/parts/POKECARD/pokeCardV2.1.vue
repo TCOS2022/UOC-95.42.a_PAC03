@@ -72,13 +72,14 @@
 
                 <div class="vistaActiva llistat">
                     <div class="pokeControls">
-                        <button>MES DADES</button>
+                        <!-- li pasem al btn el id del poke pq pugui carregar correctament les dades -->
+                        <button @:click="btnDetall(itemData.id)">MES DADES [{{itemData.id}}]</button>
                     </div>
                 </div>
 
                 <div class="vistaActiva detall">
                     <div class="pokeControls">
-                        <button>RETORNAR</button>
+                        <button @:click="btnRetorn()">RETORNAR</button>
                     </div>
                 </div>
             </section>
@@ -88,6 +89,7 @@
 
 <script>
 /* Importacions de components */
+
 /* Exportacions a template i outbounds */
 export default {
     /* Nom asignat */
@@ -132,6 +134,16 @@ export default {
     },
     /* Metodes */
     methods:{
+        recoverDataIfIdReceived:function(){
+            /**
+             * funcio qeu recupera les dades del id si detectem qeu sols ens han pasat aixo
+             */
+            //Mirem si sols em rebut un id
+            if ((this.itemData).length==1){
+                // Si resulta que el objecte rebut sols te un par key:value i es un id
+                // farem una peticio a la api, recuperarem les dades i les pintarem
+            }
+        },
         recoverURLImage:function(z){
             //console.log("recoverURLImage!!!")
             //console.log("URL1 Actual:", this.itemData.imgFrontURL)
@@ -247,6 +259,25 @@ export default {
                                 break;             
                 }
             console.log(".... render de visualitzacio Activat")
+        },
+        // Metodes pels buttons
+        btnDetall:function(pokeID){
+            // Avisem per la consola
+            console.log("Has premut DETALL!! ",pokeID)
+            //this.$router.push("/detall")
+            // Em afegit al router props:true i ara em de posar com a parametre la porp que rebra pero
+            // com aixo esta obsolet, pasarem al final les dades via query ....
+            //      this.$router.push({path:'/users',query:{name:'sai'}});
+            // i per recuperar les dades: 
+            //      template -> <h1>User {{$route.query.name}}</h1>
+            //      script   -> this.$route.query.name
+            this.$router.push({name:'detall', query:{pokeID:this.itemData.id}}); 
+        },
+        btnRetorn:function(){
+            // Avisem per la consola
+            console.log("Has premut RETORN!! ",pokeID)
+            // this.$router.push("/detall")
+            this.$router.push('/llistat'); 
         }
     },
     /* ¡¡¡¡¡¡ HOOKS !!!!! */

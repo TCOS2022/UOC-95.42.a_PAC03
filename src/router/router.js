@@ -47,7 +47,9 @@ const routes = [
     {
         path: "/detall",
         name: "detall",
-        component: Detall
+        component: Detall,
+        // When props is set to true, the route.params will be set as the component props.
+        props:true
     },
     {
         path: "/combat",
