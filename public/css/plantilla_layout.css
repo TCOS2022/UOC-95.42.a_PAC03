@@ -65,20 +65,11 @@ body{
 /*      FOOTER *************************************************************** */
 /* *************************************************************************** */
 
-
-
-
-/* ************************  LAYOUT DE CLASES I IDS  ************************* */
-/* **************************    DESENVOLUPADA    **************************** */
-/* PAGINA ******************************************************************** */
-
-
-
-
-/* PLANTILLA PAGINA */
+/*
+PLANTILLA PAGINA 
 div.pageContainer{}
     header{}  
-        /* mainHeaderV2 Component (mainHeaderV2.vue) */
+        // mainHeaderV2 Component (mainHeaderV2.vue)
         div.mainHeader{}
             div.mainTitle{}
             nav.mainNav{}
@@ -87,27 +78,27 @@ div.pageContainer{}
                     li.linkActivat{}     
 
     main{}
-        /* mainHome Component (mainHomeV1.vue) */
+        //mainHome Component (mainHomeV1.vue)
         div.loader{}
         div.contents{}
                     
     footer{} 
-        /* mainFooter Component (mainFooter.vue) */
+        //mainFooter Component (mainFooter.vue)
 
-/* MAIN HOME CONTENTS */
-            /* mainHome Component */
+MAIN HOME CONTENTS
+            // mainHome Component 
             div.mainHome{} 
 
-/* MAIN LLISTAT CONTENTS */
-            /* llistatAmbFiltre Component (llistatAmbFiltre.vue) */
+MAIN LLISTAT CONTENTS 
+            // llistatAmbFiltre Component (llistatAmbFiltre.vue) 
             div.blocFilter{}
                 div.filtre{}
                     form.filtre1{}
                 div.llistats{}
-                    /* pokeLlistat Component (pokellistatV1.0.vue) */
+                    // pokeLlistat Component (pokellistatV1.0.vue) //
                     div.pokeLlistat{}
                         ul.llistatPokes0{}
-                            /* pokeCard0 Component (pokeCardV2.1.vue) */
+                            // pokeCard0 Component (pokeCardV2.1.vue) 
                             div.pokeContainer{}
                                 section.poke_tapa{}
                                 section.poke_contingut{}
@@ -115,30 +106,39 @@ div.pageContainer{}
                                     div.pokeData{}
                                     div.pokeControls{}
 
-/* MAIN DETALL CONTENTS */
-            /* pokeCard0 Component (pokeCardV2.1.vue") */
+MAIN DETALL CONTENTS 
+            // pokeCard0 Component (pokeCardV2.1.vue") 
 
-/* MAIN COMBAT */
-            /* combatAmbFiltre Component (combatAmbFiltre.vue) */
-            div.blocFilter{}
-                div.filtre{}
-                    form.filtre1{}
-                div.llistats{}
-                    /* pokeLlistat Component (pokellistatV1.0.vue) */
-                    div.pokeLlistat{}
-                        ul.llistatPokes0{}
-                            /* pokeCard0 Component (pokeCardV2.1.vue) */
-                            div.pokeContainer{}
-                                section.poke_tapa{}
-                                section.poke_contingut{}
-                                    div.pokeImg{}
-                                    div.pokeData{}
-                                    div.pokeControls{} 
+MAIN COMBAT 
+             // combatAmbFiltre Component (combatAmbFiltre.vue)
                            
-/* MAIN CONTACT CONTENTS */
-            /* contact Component (mainContacteV1.vue) */
+MAIN CONTACT CONTENTS
+            // contact Component (mainContacteV1.vue) 
             div.contacteDades{}
             div.contacteForm{}
             div.contacteMap{}
             div.contacteVideo{}
             div.contacteLinks{}
+*/
+
+/* ASIGNACIONS REALS DE CLASES */
+div.pageContainer{
+    position:relative;
+    margin: 1.5rem auto;
+    border: red solid 5px;
+    /* border: var(--color03) solid 25px; */
+    border-radius: 0 2rem 0 2rem;
+    padding: 2rem;
+    display:flex;
+    flex-direction: column;
+    width:90%;
+}
+
+header, main, footer {
+    width: 100%;
+    border: blue solid 2.5px;
+    /*border-radius: 2rem;*/
+    min-height:25px
+}
+
+footer{display:flex;justify-content: space-around;}
