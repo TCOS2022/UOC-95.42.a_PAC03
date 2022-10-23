@@ -3,6 +3,7 @@
 
         <header>
             <h3>HEADER</h3>
+            <mainHeader0 />
         </header>
 
         <main>
@@ -26,12 +27,18 @@
 
         <footer>
             <h3>FOOTER</h3>
+            <mainFooter0 />
         </footer>
         
     </div>
 </template>
 
 <script>
+    /* Importem els elements que integrem al template */
+    import mainHeader0 from "@/views/parts/header/mainHeaderV2.vue";
+    import mainFooter0   from "@/views/parts/footer/mainFooter.vue";
+    import pokeCard0    from "@/views/parts/pokecard/pokeCardV2.1.vue";
+
     import {
         numeroMaximPokesV2, 
         resumedPokePackV1,
@@ -40,10 +47,11 @@
         extractPokeNames2
     } from "@/assets/js/libs/lib_pokeAPI.js";
 
-    import pokeCard0 from "@/views/parts/pokecard/pokeCardV2.1.vue";
+
+
     export default{
         name:"detall.vue",
-        components:{pokeCard0},
+        components:{pokeCard0,mainHeader0,mainFooter0},
         props:{
             pokeID:{
                 type:String,

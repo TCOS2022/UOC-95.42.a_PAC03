@@ -1,20 +1,26 @@
 <template>
     <div class="mainContainer">
-        <header></header>
+        <header>
+            <mainHeader0 />
+        </header>
 
         <main>
             <div class="loader"></div>
             <div class="contents">
-                <contact />
+                <contact0 />
             </div>
         </main>
         
-        <footer></footer>
+        <footer>
+            <mainFooter0 />
+        </footer>
     </div>
 </template>
 
 <script setup>
-    import contact from "@/views/parts/MAIN/CONTACTE/mainContacteV1.vue"
+    import mainHeader0 from "@/views/parts/header/mainHeaderV2.vue";
+    import mainFooter0   from "@/views/parts/footer/mainFooter.vue";
+    import contact0 from "@/views/parts/MAIN/CONTACTE/mainContacteV1.vue";
 </script>
 
 <style></style>
