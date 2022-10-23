@@ -19,21 +19,23 @@
 -->
 
 <template>
-    <!-- Seccio de HEADER principal de la pagina -->
-    <div class="mainTitle">
-        <mainTitleV2 />
-    </div>
+    <div class="mainHeader">
+        <!-- Seccio de HEADER principal de la pagina -->
+        <div class="mainTitle">
+            <mainTitleV2 />
+        </div>
 
-    <nav class="mainNav">
-        <ul>
-            <li>
-                <navLinksV2 />
-            </li>
-            <li>
-                <tsLinksV1 />
-            </li>
-        </ul>
-    </nav>
+        <nav class="mainNav">
+            <ul>
+                <li>
+                    <navLinksV2 />
+                </li>
+                <li>
+                    <tsLinksV1 />
+                </li>
+            </ul>
+        </nav>
+    </div>
 </template>
 
 <script setup>

@@ -1,26 +1,29 @@
 <template>
-<div id="pageLlistat">
+<div id="pageContainer">
     <h1>PAGINA LLISTAT 1.2</h1>
 
-    <div>
+    <header>
         <h3>HEADER</h3>
         <header01 />
-    </div>
+    </header>
 
-    <div>
-        <h3>LOADER</h3>
-        <img src="media/imatges/animacions/loading_v2.gif" alt="" srcset="">
-    </div>
+    <main>
+        <div class="loader">
+            <h3>LOADER</h3>
+            <img src="media/imatges/animacions/loading_v2.gif" alt="" srcset="">
+        </div>
 
-    <div>
-        <h3>CONTENTS</h3>
-        <!-- <filtreIllistat01 /> -->
-        <combatAmbFiltre />
-    </div>
+        <div class="contents">
+            <h3>CONTENTS</h3>
+            <!-- <filtreIllistat01 /> -->
+            <combatAmbFiltre />
+        </div>
+    </main>
 
-    <div>
+
+    <footer>
         <h3>FOOTER</h3>
-    </div>
+    </footer>
 </div>
 
 </template>

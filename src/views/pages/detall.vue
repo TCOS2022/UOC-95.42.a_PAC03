@@ -1,30 +1,34 @@
 <template>
-    <h1>PAGINA DETALL</h1>
+    <div class="pageContainer">
 
-    <div><h3>HEADER</h3></div>
+        <header>
+            <h3>HEADER</h3>
+        </header>
 
-    <div>
-        <h3>LOADER</h3>
-        <img src="/media/imatges/animacions/loading_v2.gif" alt="" srcset="">
+        <main>
+            <div class="loader">
+                <h4>LOADER</h4>
+                <img src="/media/imatges/animacions/loading_v2.gif" alt="" srcset="">
+            </div>
+
+            <div class="contents">
+                <h4>DETALL</h4>
+                <p>**************</p>
+                <p>Dades rebude via url: $route.query.pokeID</p>
+                <p>{{$route.query.pokeID}}</p>
+                <p>{{dadesPerEnviar}}</p>
+                <p>**************</p>
+                <!-- -->
+                <pokeCard0 itemView="detall" :itemData="enviarAlPokeCard()" />
+                <!---->
+            </div>  
+        </main>
+
+        <footer>
+            <h3>FOOTER</h3>
+        </footer>
+        
     </div>
-
-    <div>
-        <h3>CONTENTS</h3>
-
-
-        <h4>DETALL</h4>
-        <p>**************</p>
-        <p>Dades rebude via url: $route.query.pokeID</p>
-        <p>{{$route.query.pokeID}}</p>
-        <p>{{dadesPerEnviar}}</p>
-        <p>**************</p>
-        <!-- -->
-        <pokeCard0 itemView="detall" :itemData="enviarAlPokeCard()" />
-        <!---->
-    </div>
-
-    <div><h3>FOOTER</h3></div>
-
 </template>
 
 <script>

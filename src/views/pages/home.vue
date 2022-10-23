@@ -7,7 +7,11 @@
         
         <main>
             <!-- Aqui va el MAIN carregat de manera dinamica -->
-            <mainHome />
+            <div class="loader"></div>
+            <div class="contents">
+                <mainHome />
+            </div>
+
         </main>
         
         <footer>

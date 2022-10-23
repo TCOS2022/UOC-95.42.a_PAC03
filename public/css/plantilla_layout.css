@@ -38,14 +38,107 @@ body{
     font-size: var(--font-size00);
 }
 
-/* HEADER ******************************************************************** */
-/* HEADER - TITLE ************************************************************ */
-/* HEADER - NAVLINKS ********************************************************* */
-/* HEADER - TSLINKS ********************************************************** */
-/* MAIN ********************************************************************** */
-/* MAIN - HOME *************************************************************** */
-/* MAIN - LLISTAT ************************************************************ */
-/* MAIN - DETALL ************************************************************* */
-/* MAIN - COMBAT ************************************************************* */
-/* MAIN - CONTACTE *********************************************************** */
-/* FOOTER ******************************************************************** */
+/* ********************  ESTRUCTURA DE CLASES I IDS  ************************* */
+/* *************************************************************************** */
+/* PAGINA ******************************************************************** */
+/*      HEADER *************************************************************** */
+/*          TITLE ************************************************************ */
+/*          NAVS ************************************************************* */
+/*              NAVLINKS ***************************************************** */
+/*              TSLINKS ****************************************************** */
+/*      MAIN ***************************************************************** */
+/*          LOADER *********************************************************** */
+/*          CONTENT ********************************************************** */
+/*              HOME ********************************************************* */
+/*              LLISTAT ****************************************************** */
+/*                  FILTRE *************************************************** */
+/*                      LLISTAPOKES ****************************************** */
+/*                          POKECARD ***************************************** */
+/*              DETALL ******************************************************* */
+/*                      LLISTAPOKES ****************************************** */
+/*                          POKECARD ***************************************** */
+/*              COMBAT ******************************************************* */
+/*                  FILTRE *************************************************** */
+/*                      LLISTAPOKES ****************************************** */
+/*                          POKECARD ***************************************** */
+/*              CONTACT ****************************************************** */
+/*      FOOTER *************************************************************** */
+/* *************************************************************************** */
+
+
+
+
+/* ************************  LAYOUT DE CLASES I IDS  ************************* */
+/* **************************    DESENVOLUPADA    **************************** */
+/* PAGINA ******************************************************************** */
+
+
+
+
+/* PLANTILLA PAGINA */
+div.pageContainer{}
+    header{}  
+        /* mainHeaderV2 Component (mainHeaderV2.vue) */
+        div.mainHeader{}
+            div.mainTitle{}
+            nav.mainNav{}
+                ul.navLinks{}
+                ul.tsLinks{}
+                    li.linkActivat{}     
+
+    main{}
+        /* mainHome Component (mainHomeV1.vue) */
+        div.loader{}
+        div.contents{}
+                    
+    footer{} 
+        /* mainFooter Component (mainFooter.vue) */
+
+/* MAIN HOME CONTENTS */
+            /* mainHome Component */
+            div.mainHome{} 
+
+/* MAIN LLISTAT CONTENTS */
+            /* llistatAmbFiltre Component (llistatAmbFiltre.vue) */
+            div.blocFilter{}
+                div.filtre{}
+                    form.filtre1{}
+                div.llistats{}
+                    /* pokeLlistat Component (pokellistatV1.0.vue) */
+                    div.pokeLlistat{}
+                        ul.llistatPokes0{}
+                            /* pokeCard0 Component (pokeCardV2.1.vue) */
+                            div.pokeContainer{}
+                                section.poke_tapa{}
+                                section.poke_contingut{}
+                                    div.pokeImg{}
+                                    div.pokeData{}
+                                    div.pokeControls{}
+
+/* MAIN DETALL CONTENTS */
+            /* pokeCard0 Component (pokeCardV2.1.vue") */
+
+/* MAIN COMBAT */
+            /* combatAmbFiltre Component (combatAmbFiltre.vue) */
+            div.blocFilter{}
+                div.filtre{}
+                    form.filtre1{}
+                div.llistats{}
+                    /* pokeLlistat Component (pokellistatV1.0.vue) */
+                    div.pokeLlistat{}
+                        ul.llistatPokes0{}
+                            /* pokeCard0 Component (pokeCardV2.1.vue) */
+                            div.pokeContainer{}
+                                section.poke_tapa{}
+                                section.poke_contingut{}
+                                    div.pokeImg{}
+                                    div.pokeData{}
+                                    div.pokeControls{} 
+                           
+/* MAIN CONTACT CONTENTS */
+            /* contact Component (mainContacteV1.vue) */
+            div.contacteDades{}
+            div.contacteForm{}
+            div.contacteMap{}
+            div.contacteVideo{}
+            div.contacteLinks{}

@@ -2,7 +2,7 @@
 <div id="blocFilter">
     <h2> BLOC DEL FILTRE </h2>
     <br><br>
-    <div class="template">
+    <div class="filtre">
         <form class="filtre1">
             <fieldset>
                 <h3 class="filtreTitol"> FILTRE !!!</h3>
@@ -37,7 +37,7 @@
         </form>
     </div>
 
-    <div>
+    <div class="llistats">
         <h2> BLOC DE LES POKECARDS </h2>
         <br><br>
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->

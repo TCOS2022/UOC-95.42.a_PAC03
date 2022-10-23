@@ -1,5 +1,5 @@
 <template>
-    <ul class="themeSelectorUL">
+    <ul class="tsLinks">
         <li @click="changeTheme($event, 'system')" class="linkActivat">
             <span>icon</span>    
             <span>System</span>
@@ -85,22 +85,22 @@
 </script>
 
 <style>
-    ul.themeSelectorUL{
+    ul.tsLinks{
         list-style: none;
         display:flex;
         justify-content: space-around;
     }
-    .themeSelectorUL li{
+    .tsLinks li{
         display:block;
         margin:0;
         color: blue;
         background-color: lightgreen;
         border:solid orange 0.25rem
     }
-    .themeSelectorUL li:hover{
+    .tsLinks li:hover{
         transform: scale(150%);
     }
-    .themeSelectorUL li.linkActivat{
+    .tsLinks li.linkActivat{
         color:lightgreen;
         background-color: blue;
         font-weight: bolder;

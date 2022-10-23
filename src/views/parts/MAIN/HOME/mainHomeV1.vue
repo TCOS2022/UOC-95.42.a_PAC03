@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mainHome">
         <h1>PAGINA DE HOME</h1>
         <h2>Benvinguts a la nostra pokeDexMachine v3.x</h2>
         <br>

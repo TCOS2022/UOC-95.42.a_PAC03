@@ -1,5 +1,16 @@
 <template>
-    <contact />
+    <div class="mainContainer">
+        <header></header>
+
+        <main>
+            <div class="loader"></div>
+            <div class="contents">
+                <contact />
+            </div>
+        </main>
+        
+        <footer></footer>
+    </div>
 </template>
 
 <script setup>

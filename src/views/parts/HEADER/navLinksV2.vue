@@ -24,7 +24,7 @@
 -->
 
 <template>
-    <ul>
+    <ul class="navLinks">
         <li v-for = "(item) in contentNavArray" :class="item.class">
             <!-- v2.0
             <a :href="item.url" >

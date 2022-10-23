@@ -1,13 +1,16 @@
 <template>
-    <div class="mainContainer">
+    <div class="pageContainer">
         <header>
             <!-- Aqui va el HEADER carregat de manera dinamica -->
             <mainHeaderV2 />
         </header>
         
         <main>
-            <!-- Aqui va el MAIN carregat de manera dinamica -->
-            <mainHome />
+            <div class="loader"></div>
+            <div class="contents">
+                <!-- Aqui va el MAIN carregat de manera dinamica -->
+                <mainHome />
+            </div>
         </main>
         
         <footer>
@@ -28,7 +31,7 @@
 /* ATENCIO, IMPORTAR ARXIUS CSS SOLS FUNCIONA SI NO ESTEM SCOPED */
 /* @import "@/assets/css/plantilla_colors.css"; --> :root{--color03: green;}*/
 
-    .mainContainer{
+    .pageContainer{
         position:relative;
         margin: 1.5rem auto;
         border: red solid 5px;
