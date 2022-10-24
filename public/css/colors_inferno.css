@@ -43,8 +43,21 @@
 
 :root{
     /* FROM PAC 02 */
+    --bg_color:    rgb(79, 3, 3);
+    --font_color:  rgb(249, 164, 7);
+    --font-type:   inferno;
+    --font-weight: bold;
+    --font-style:  italic;
 
-    
+    --color1:#675050;
+    --color2: #382626;
+    --color3:#a57b64;
+    --color4: #250e0e;
+    --color5: #905b5b;
+
+    --atac: rgb(144, 48, 48);
+    --defensa: rgb(50, 109, 106);
+
     /* Colors de fons/backgrounds */
     --bg_color00: red;
     --bg_color01: #0A0A0A;
