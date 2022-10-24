@@ -2,18 +2,18 @@
     <div class="pageContainer">
 
         <header>
-            <h3>HEADER</h3>
+            <!-- <h3>HEADER</h3> -->
             <mainHeader0 />
         </header>
 
         <main>
             <div class="loader">
-                <h4>LOADER</h4>
+                <!-- <h4>LOADER</h4> -->
                 <img src="/media/imatges/animacions/loading_v2.gif" alt="" srcset="">
             </div>
 
             <div class="contents">
-                <h4>DETALL</h4>
+                <!-- <h4>DETALL</h4> -->
                 <p>**************</p>
                 <p>Dades rebude via url: $route.query.pokeID</p>
                 <p>{{$route.query.pokeID}}</p>
@@ -26,8 +26,10 @@
         </main>
 
         <footer>
-            <h3>FOOTER</h3>
-            <mainFooter0 />
+            <!-- 
+                <h3>FOOTER</h3>
+                <mainFooter0 />
+             -->
         </footer>
         
     </div>

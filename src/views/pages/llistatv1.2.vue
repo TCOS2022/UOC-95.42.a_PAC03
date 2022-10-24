@@ -2,25 +2,25 @@
     <div class="pageContainer">
 
         <header>
-            <h3>HEADER</h3>
+            <!-- <h3>HEADER</h3> -->
             <header01 />
         </header>
 
         <main>
             <div class="loader">
-                <h3>LOADER</h3>
+                <!-- <h3>LOADER</h3> -->
                 <img src="media/imatges/animacions/loading_v2.gif" alt="" srcset="">
             </div>
 
             <div class="contents">
-                <h3>CONTENTS</h3>
+                <!-- <h3>CONTENTS</h3> -->
                 <!-- <filtreIllistat01 /> -->
                 <llistatAmbFiltre />
             </div>
         </main>
 
         <footer>
-            <h3>FOOTER</h3>
+            <!-- <h3>FOOTER</h3> -->
         </footer>
     </div>
 

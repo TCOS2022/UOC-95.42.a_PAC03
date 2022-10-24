@@ -6,7 +6,7 @@
         </header>
 
         <main>
-            main
+           <!--  main -->
             <div class="loader"></div>
             <div class="contents">
                 <contact0 />
