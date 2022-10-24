@@ -121,7 +121,10 @@ MAIN CONTACT CONTENTS
             div.contacteLinks{}
 */
 
-/* ASIGNACIONS REALS DE CLASES */
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+/* ------------------------ PAGINA --------------------------- */
 div.pageContainer{
     position:relative;
     margin: 1.5rem auto;
@@ -143,5 +146,56 @@ header, main, footer {
     /*border-radius: 2rem;*/
     min-height:25px
 }
+/* ----------------------------------------------------------- */
 
+
+
+/* ------------------ HEADER --------------------------------- */
+/* ----------------------------------------------------------- */
+
+
+/* ------------------ MAIN ----------------------------------- */
+main .loader{}
+
+main .contents{}
+
+/* ----------------------------------------------------------- */
+
+
+/* ------------------ FOOTER --------------------------------- */
 footer{display:flex;justify-content: space-around;}
+/* ----------------------------------------------------------- */
+
+
+
+/* ------------------ CONTENTS PAGE ERROR -------------------- */
+.contentPageError{
+    width:75%;
+    border: solid red 10px;
+    margin:50px auto;
+    padding: 5px;
+    background: repeating-linear-gradient(10deg,green ,yellow 45px);
+    text-align: center;
+}
+.contentPageError img{width: 50%; margin:0 auto; text-align:center}
+.contentPageError h1{width: 75%;margin:0 auto; padding: 1rem; background-color: red;color:white;font-size: 3em;}
+.contentPageError p{width: 75%;margin:2rem auto; padding: 1rem; background-color: blue;color:yellow;font-size: 2em;}
+/* ----------------------------------------------------------- */
+
+
+/* ------------------ CONTENTS HOME --------------------------- */
+/* ------------------------------------------------------------ */
+
+
+/* ------------------ CONTENTS LLISTAT ------------------------ */
+/* ------------------------------------------------------------ */
+
+
+/* ------------------ CONTENTS COMBAT-------------------------- */
+/* ------------------------------------------------------------ */
+
+
+/* ------------------ CONTENTS CONTACT ------------------------ */
+/* ------------------------------------------------------------ */
+
+
