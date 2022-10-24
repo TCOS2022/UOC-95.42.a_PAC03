@@ -42,6 +42,20 @@
 /* Definim els nom de les variables que farem servir a tot el projecte */
 
 :root{
+    /* FROM PAC 02 */
+    --bg_color:   rgb(64, 62, 62);
+    --font_color: rgb(250,250,250);
+    
+    --color1:#716E77;
+    --color2: #262c38;
+    --color3:#B2A4AB;
+    --color4: #0E1C25;
+    --color5: #6a6f72;
+
+    --atac: rgb(144, 48, 48);
+    --defensa: rgb(50, 109, 106);
+
+    
     /* Colors de fons/backgrounds */
     --bg_color00: #0A0A0A;
     --bg_color01: #FAFAFA;

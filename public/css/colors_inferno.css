@@ -42,6 +42,9 @@
 /* Definim els nom de les variables que farem servir a tot el projecte */
 
 :root{
+    /* FROM PAC 02 */
+
+    
     /* Colors de fons/backgrounds */
     --bg_color00: red;
     --bg_color01: #0A0A0A;
