@@ -110,7 +110,7 @@ MAIN DETALL CONTENTS
             // pokeCard0 Component (pokeCardV2.1.vue") 
 
 MAIN COMBAT 
-             // combatAmbFiltre Component (combatAmbFiltre.vue)
+            // combatAmbFiltre Component (combatAmbFiltre.vue)
                            
 MAIN CONTACT CONTENTS
             // contact Component (mainContacteV1.vue) 
@@ -125,18 +125,21 @@ MAIN CONTACT CONTENTS
 div.pageContainer{
     position:relative;
     margin: 1.5rem auto;
-    border: red solid 5px;
+    border: var(--color01) solid 5px;
     /* border: var(--color03) solid 25px; */
     border-radius: 0 2rem 0 2rem;
     padding: 2rem;
     display:flex;
     flex-direction: column;
     width:90%;
+    /* Asignem el color segons la variable del tema */
+    background-color: var(--bg_color00);
+    color: var(--color00)
 }
 
 header, main, footer {
     width: 100%;
-    border: blue solid 2.5px;
+    border:var(--color04) solid 2.5px;
     /*border-radius: 2rem;*/
     min-height:25px
 }

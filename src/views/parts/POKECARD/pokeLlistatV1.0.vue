@@ -34,7 +34,7 @@ export default {
         items:{},
         itemView1:{
             type: String,
-            default:"llistat"
+            default:"combat"
         },
         itemData1:{
             type: [Array,Object],
