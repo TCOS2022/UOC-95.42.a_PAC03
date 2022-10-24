@@ -184,6 +184,8 @@ footer{display:flex;justify-content: space-around;}
 
 
 /* ------------------ CONTENTS HOME --------------------------- */
+.mainHome {}
+.mainHome h1 {color: var(--font_color) ; background-color: var(--bg_color);}
 /* ------------------------------------------------------------ */
 
 
@@ -196,6 +198,11 @@ footer{display:flex;justify-content: space-around;}
 
 
 /* ------------------ CONTENTS CONTACT ------------------------ */
+.mainContacte{}
+.mainContacte h1{}
+.mainContacte form{}
+.mainContacte .contacteMaps{}
+
 /* ------------------------------------------------------------ */
 
 
