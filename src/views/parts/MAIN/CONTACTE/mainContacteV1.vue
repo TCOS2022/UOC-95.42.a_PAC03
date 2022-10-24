@@ -68,6 +68,8 @@
 
 <script></script>
 
-<style scoped>
+<style>
+/*
     .logo {width:75%;text-align:center;margin:auto}
+*/
 </style>
