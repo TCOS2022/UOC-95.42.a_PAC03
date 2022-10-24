@@ -62,9 +62,10 @@
                     */
                     /* v2.1 */
                     default:[
-                            {class:"linkActivat",icona:"Icon ", nom:"Home",     url:"/"},
+                            //{class:"linkActivat",icona:"Icon ", nom:"Home",     url:"/"},
+                            {class:"",icona:"Icon ", nom:"Home",     url:"/"},
                             {class:"",           icona:"Icon ", nom:"Llistat",  url:"/llistat"},
-                            {class:"",           icona:"Icon ", nom:"Detall",   url:"/detall"},
+                            //{class:"",           icona:"Icon ", nom:"Detall",   url:"/detall"},                          
                             {class:"",           icona:"Icon ", nom:"Combat",   url:"/combat"},
                             {class:"",           icona:"Icon ", nom:"Contacte", url:"/contacte"}
                     ]
@@ -99,6 +100,9 @@
         background-color: lightgreen;
         border:solid orange 0.25rem
     }
+
+    li span:first-child{display:none}
+    
     li:hover{
         transform: scale(150%);
     }

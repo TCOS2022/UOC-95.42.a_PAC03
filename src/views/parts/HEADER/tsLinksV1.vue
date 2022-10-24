@@ -1,19 +1,20 @@
 <template>
     <ul class="tsLinks">
-        <li @click="changeTheme($event, 'system')" class="linkActivat">
-            <span>icon</span>    
+        <!-- <li @click="changeTheme($event, 'system')" class="linkActivat"> -->
+        <li @click="changeTheme($event, 'system')" class="">
+            <span>icon </span>    
             <span>System</span>
         </li>
         <li @click="changeTheme($event, 'light')">
-            <span>icon</span>    
+            <span>icon </span>    
             <span>Light</span>
         </li>
         <li @click="changeTheme($event, 'dark')">
-            <span>icon</span>    
+            <span>icon </span>    
             <span>Dark</span>
         </li>
         <li @click="changeTheme($event, 'inferno')">
-            <span>icon</span>    
+            <span>icon </span>    
             <span>Inferno</span>
         </li>
     </ul>
@@ -97,6 +98,9 @@
         background-color: lightgreen;
         border:solid orange 0.25rem
     }
+    /* Podem apagar els icons ja que no els em afegit encara .... */
+    .tsLinks li span:first-child{display:none}
+
     .tsLinks li:hover{
         transform: scale(150%);
     }
