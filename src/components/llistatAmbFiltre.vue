@@ -1,7 +1,7 @@
 
 
 <template>
-<div id="blocFilter">
+<div class="blocFilter">
     <h2> BLOC DEL FILTRE </h2>
     <br><br>
     <div class="filtre">
@@ -349,7 +349,7 @@
 </script>
 
 <style scoped>
-#blocFilter{
+.blocFilter{
     background-color: lightyellow;
     width:95%;
     margin:0 auto;
