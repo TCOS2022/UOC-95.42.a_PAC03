@@ -14,8 +14,10 @@
         </main>
         
         <footer>
-            footer
-            <mainFooter0 />
+            <!-- 
+                footer
+                <mainFooter0 />
+            -->
         </footer>
 
     </div>
