@@ -1,7 +1,9 @@
 <template>
 <div id="blocFilter">
+    <!--
     <h2> BLOC DEL FILTRE </h2>
     <br><br>
+    -->
     <div class="filtre">
         <form class="filtre1">
             <fieldset>
@@ -21,14 +23,15 @@
                 <label for="op3">Que contingui les lletres independents</label>
             </fieldset>
             <!-- SOLS PER EFECTES DE DEBUGGING  INICI -->
-            <fieldset>
+            
+            <fieldset style="display:none">
                 ENTRADA ARRAY : <span id="filtreEntrada">   </span> <br>
                 DADES FILTRE  : <span id="filtreInput">     </span> <br>
                 OPTIONS       : <span id="filtreOption">    </span> <br>
                 SORTIDA FILTRE: <span id="filtreSortida">   </span> <br>
             </fieldset>
             <br><br>
-            <fieldset>
+            <fieldset style="display:none">
                 <p> DADES CREADES AMB ELS INITIALIZERS </p>
                 arrayPokes: <!-- {{ arrayPokes }}  --><br><br>
                 arrayNoms : {{ arrayNoms }}
@@ -38,8 +41,10 @@
     </div>
 
     <div class="llistats">
+        <!--
         <h2> BLOC DE LES POKECARDS </h2>
         <br><br>
+        -->
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->
         <pokeLlistat itemView1="combat" :itemData1="enviarDadesAlLlistat()"/>
     </div>

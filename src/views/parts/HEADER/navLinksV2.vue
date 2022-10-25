@@ -101,8 +101,9 @@
         border:solid orange 0.25rem
     }
 
+    /* Podem apagar els icons ja que no els em afegit encara .... */
     li span:first-child{display:none}
-    
+
     li:hover{
         transform: scale(150%);
     }

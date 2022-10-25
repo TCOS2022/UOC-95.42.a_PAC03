@@ -23,7 +23,8 @@
 
 <template>
     <div class="pokeContainer">
-        <article class="pokeCard" id="pokeID">
+
+        <article class="pokeCard" :id="retornaPokeID()">
 
             <section class="poke_tapa">
                 <div class="vistaActiva combat">
@@ -83,12 +84,16 @@
                     </div>
                 </div>
             </section>
+
         </article>  
+
     </div>
+
 </template>
 
 <script>
 /* Importacions de components */
+import {dadesPokeByIDV2} from "@/assets/js/libs/lib_pokeAPI.js"
 
 /* Exportacions a template i outbounds */
 export default {
@@ -134,6 +139,7 @@ export default {
     },
     /* Metodes */
     methods:{
+        retornaPokeID:function(){return this.itemData.id},
         recoverDataIfIdReceived:function(){
             /**
              * funcio qeu recupera les dades del id si detectem qeu sols ens han pasat aixo
@@ -248,6 +254,24 @@ export default {
                                         element.style.display = "none"
                                     }
                                 });
+                                // Com es un  combat, cal que li asignem 2 coses mes:
+                                //  1) event click a article.pokeCard
+                                //  2) estils especials a la poke_tapa i al poke_contingut
+
+                                // Afegint event click ....
+                                console.log("Asignant event al article amb id: [" + this.itemData.id + "]")
+                                /*
+                                let anclasPoke = document.querySelector('article')
+                                anclasPoke.forEach(element => {
+                                    element.addEventListener("click",this.pokeClickEvent)
+                                });
+
+                                // NOTA: per fer servir nº al querySelector ... es realment una pesadill pq s ahn de escapar primer
+                                // he trobat una explicacio aqui: https://foroayuda.es/uso-de-queryselector-con-id-que-son-numeros/#:~:text=Uso%20de%20querySelector%20con%20ID%20que%20son%20n%C3%BAmeros,danos%20de%20tu%20ayuda%20para%20ampliar%20esta%20comunidad.
+
+                                */
+                                let anclaPoke = document.getElementById(this.itemData.id)
+                                anclaPoke.addEventListener("click",()=>{this.pokeClickEvent()}) // cal funcio anonima si volem pasar parametres
                                 break;  
 
                 default:        /* Sense vista definida */
@@ -278,6 +302,128 @@ export default {
             console.log("Has premut RETORN!! ",pokeID)
             // this.$router.push("/detall")
             this.$router.push('/llistat'); 
+        },
+        // Combat!!!!
+        pokeClickEvent:function(){
+            /** Funcio que esta asignada al evnet click de la carta a l pantalla de combat
+            * Que em de fer:
+            *   detectar si ja tenim una carta activada (via class = "cartaActivada" per exemple)
+            *       si -> realitzar un combat i inicialitzar stats cartes
+            *       no -> voltejar carta 
+            *  */
+           console.log("Ha clicat sobre una carta!!!!")
+           console.log("pokeID-> ",this.itemData.id)
+           
+           if(this.pokeCardCartesActivades()==0){ 
+                // no tenim cap carta activada, aquesta es la primera
+                console.log("CAP carta activada encara, aquesta sera la 1ª")
+                this.pokeGirarCarta()
+            }
+           else if(this.pokeCardCartesActivades()==1){ 
+                // ja tenim 1 carta, aqeusta es la segona 
+                console.log("JA tenim 1, aquesta sera la 2ª")
+                this.pokeGirarCarta();
+                this.pokeCombat();
+            }
+           else if(this.pokeCardCartesActivades()>=2){ 
+                // ja tenim dos cartes, reset!!!!! 
+                console.log("JA tenim 2, reset!!!!!")
+                this.pokeCardsReset();
+           }
+           
+        },
+        pokeCardCartesActivades(){
+            /** Funcio qeu ens retorna quantes cartes tenim activades */
+            let anclas = document.querySelectorAll(".pokeCard.activada")
+            let contador = anclas.length
+            console.log("COMBAT? Tenim [" + contador + "] activades")
+            return contador
+        },
+        pokeCardsReset(){
+            /** funcio qeu posa TOTES les cartes tapades */
+            console.log("COMBAT -> resetejant TOTES les cartes!!!!")
+            let anclas = document.querySelectorAll(".pokeCard")
+            anclas.forEach(element => {
+                if(element.classList.contains("activada")){
+                    element.classList.remove("activada")
+                }
+            });    
+        },
+        pokeGirarCarta(e){
+            /** Funcio qeu gira la carta clickada */
+            console.log("COMBAT -> girant la carta [" + this.itemData.id + "]")
+            // recuperem el selector del element sobre el qual s ha fet el click, que ens ve del event
+            // canviem el stat del element
+            let ancla = document.getElementById(this.itemData.id)
+            if(ancla.classList.contains("activada")){
+                // Si JA estem tumbats, ens "destumbem"
+                console.log("Carta ACTIVADA, la DESACTIVEM")
+                ancla.classList.remove("activada")
+            }else{
+                // Si no estem tumbats, ens tumbem
+                console.log("Carta DESACTIVADA, la ACTIVEM")
+                ancla.classList.add("activada")
+            }  
+        },
+        async pokeCombat(){
+            /**
+             * Funcio que realitza el combat i imprimeix el resultat la carta 1ª sempre ATACA
+             */
+            console.log("COMBAT -> realitzant combat ...")
+            let resultat  = ""
+            let resultat0 = ""
+            let resultat1 = ""
+
+            // Definim el defensor (2ª carta, que es la carta actual)
+            let cardDefensor_ID  = this.itemData.id
+            let cardDefensor_NOM = this.itemData.name
+            let cardDefensor_DEF = this.itemData.pokeDef
+            let cardAtacant_ID  = "element.id"
+            let cardAtacant_NOM = "element.name"
+            let cardAtacant_ATK = "element.pokeAtk"
+
+            // Definim el atacant (1ª carta), busquem quina card esta activada i ES diferent de la actual
+            let anclaActivades = document.querySelectorAll(".pokeCard.activada")
+            anclaActivades.forEach( async element => {
+                // Comprovem si el seu id es el mateix que el actual
+                console.log("ID del llegit: ",element.id)
+                if(this.itemData.id == element.id){
+                    // SI, es el mateix, no serveix
+                }else{
+                    // NO, es diferent, es el qeu busquem!!!
+                    //fem la apeticio a la pokeAPI
+                    let dadesPoke = await dadesPokeByIDV2(element.id);
+                    console.log("Dades rebudes desde API:")
+                    console.log(dadesPoke)
+                    cardAtacant_ID  = dadesPoke.id
+                    cardAtacant_NOM = dadesPoke.name
+                    cardAtacant_ATK = dadesPoke.stats[1].base_stat
+                    console.log("Dades atacant ID / NOM / ATK")
+                    console.log(cardAtacant_ID + " / " + cardAtacant_NOM + " / " + cardAtacant_ATK)
+                    console.log("element->")
+                    console.log(element)
+
+                    // Definim el resultat
+                    if (cardAtacant_ATK == cardDefensor_DEF){
+                        // EMPAT!!   
+                        resultat1 = "[ EMPATA ]"
+                    }
+                    else if (cardAtacant_ATK > cardDefensor_DEF){
+                        // GUANYA ATACANT
+                        resultat1 = "[ GUANYA ]"
+                    }
+                    else{
+                        // GUANYA DEFENSOR
+                        resultat1 = "[ PERD ]"
+                    }
+                    // Imprimir el resultat
+                    resultat0 = "El Poke [" + cardAtacant_ID + " / " + cardAtacant_NOM + "] ATACA al Poke [" + cardDefensor_ID + " / " + cardDefensor_NOM + "], i "
+                    resultat = resultat0 + resultat1
+                    console.log(resultat)
+                    let anclaResultat = document.querySelector(".combatResults")
+                    anclaResultat.innerHTML = resultat 
+                }
+            });  
         }
     },
     /* ¡¡¡¡¡¡ HOOKS !!!!! */
@@ -296,13 +442,72 @@ export default {
 </script>
 
 <style scoped>
+/* *********** LLISTAT / DETALL / COMBAT ********************** */
     .pokeContainer{
         background-color: lightskyblue;
         width: 90%;
         margin:0 auto;
-        padding:1rem
+        padding:1rem;
     }
 
-    .poke_tapa img{height: 10rem;}
+    .poke_tapa img{height: 20rem;}
     .pImg img{height: 5rem;width: 50%;}
+
+    /* ***************************************** */
+    /* *********** COMBAT ********************** */
+    .vistaActiva.combat
+    div.pokeContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    -webkit-perspective:1200;
+    -moz-perspective:1200;
+    perspective: 1200;
+    display:flex;
+    width: 200px; height: 200px;
+    }
+    article.pokeCard {
+    position:relative;
+    /* Afegim la gestio heredada dels efectes 3D */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all 5s ease;
+    /* Li posem un border pq ajusti be quant sigui activada */
+    border: var(--color1) 5px solid;
+    border-radius: 25px;
+    }
+    article.pokeCard.activada {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: var(--atac) 5px solid;
+    border-radius: 25px;
+    }
+    .poke_tapa, .poke_contingut{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* Posem la cara del darrera del div oculta */
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    }
+    .poke_tapa img {width: max-content}
+    .poke_contingut{
+    position:absolute;
+    top:0;
+    left:0;
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    }
+
 </style>

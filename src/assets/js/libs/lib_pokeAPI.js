@@ -114,6 +114,20 @@ export async function numeroMaximPokesV2(){
 
 export async function dadesPokeByIDV2(pokeID){
     /** Obtenim les dades de un pokeitem a partir de la seva id */
+        /**
+     * 
+     */
+
+    /* Informem a la consola que comencem ... */
+    //console.log("FUNCIO: " + arguments.callee.name + " / INICI ")
+
+    /* Definim algunes variables que podem necessitar */
+    const urlAPI         = "https://pokeapi.co/api/v2/"
+    const pokemonspecies = "pokemon-species/"
+    const pokemondata    = "pokemon/"
+    let peticio = await axios.get(urlAPI + "pokemon/" + pokeID).then(response => response.data)
+    console.log("Recuperant dades de la pokeID [" + pokeID + "] ... ", peticio)
+    return peticio
 }
 
 export async function pokePackByArrayV2(arrayPokes){

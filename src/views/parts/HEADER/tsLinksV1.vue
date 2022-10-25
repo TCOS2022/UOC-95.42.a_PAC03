@@ -98,6 +98,7 @@
         background-color: lightgreen;
         border:solid orange 0.25rem
     }
+    
     /* Podem apagar els icons ja que no els em afegit encara .... */
     .tsLinks li span:first-child{display:none}
 

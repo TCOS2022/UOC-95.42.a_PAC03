@@ -1,8 +1,9 @@
 <template>
     <div class="pokeLlistat">
         <div>
-            <h3>ARRAY DE DADES REBUDES</h3>
             <!--
+            <h3>ARRAY DE DADES REBUDES</h3>
+
             <p>**********************************</p>
             <p>Dades de visualitzacio1: {{ itemView1 }} </p>
             <p>**********************************</p>
@@ -20,6 +21,7 @@
             </li>
         </ul>
         <br>
+        <div class="combatResults"></div>
     </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
         items:{},
         itemView1:{
             type: String,
-            default:"combat"
+            default:"llistat"
         },
         itemData1:{
             type: [Array,Object],
@@ -52,22 +54,22 @@ export default {
 }
 </script>
 
-<style>
-/*
+<style scoped>
+
 .pokeLlistat{
     background-color: lightcoral;
     width: 90%;
     margin:0 auto;
     padding:1rem;
 }
-ul.llistatPokes0{
+.pokeLlistat ul.llistatPokes0{
     display:flex;
     list-style: none;
     flex-wrap: wrap;
 }
-ul.llistatPokes0 li{
+.pokeLlistat ul.llistatPokes0 li{
     min-width: 20%;
     margin-top: 0.5rem;
 }
-*/
+
 </style>
