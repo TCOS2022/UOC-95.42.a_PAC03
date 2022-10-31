@@ -1,0 +1,51 @@
+
+div.pokeContainer.vistaActiva.llistat.detall.combat{}
+
+    article.pokeCard.vistaActiva.llistat.detall.combat{}
+
+        div.vistaActiva.combat{}
+
+            section.poke_tapa{}
+
+                img{}
+
+        div.vistaActiva.llistat.detall.combat{}
+
+            section.poke_contingut{}
+
+                div.pokeImg{}
+
+                    div.pID{}
+                        span.pokeId0{}
+                        span.pokeId1{}
+
+                    div.pImg{}
+                        img{}
+
+                    div.pName{}
+                        span.pokeName0{}
+                        span.pokeName1{}
+                
+                div.pokeData{}
+
+                    div.pAtk{}
+                        span.pokeAtk0{}
+                        span.pokeAtk1{}
+
+                    div.pDef{}
+                        span.pokeDef0{}
+                        span.pokeDef1{}
+
+                div.vistaActiva.combat{}
+                    div.pokeData{}
+                        div.ptypes{}
+                            span.pokeType0{}
+                            span.pokeType1{}
+
+                div.vistaActiva.llistat{}
+                    div.pokeControls{}
+                        button{}
+
+                div.vistaActiva.detall{}
+                    div.pokeControls{}
+                        button{}

@@ -40,10 +40,10 @@
     </div>
 
     <div class="llistats">
-        <h2 style="display:none"> BLOC DE LES POKECARDS </h2>
+        <h2 style="display:block"> LLISTAT DE  POKECARDS </h2>
         <br><br>
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->
-        <pokeLlistat itemView1="llistat" :itemData1="enviarDadesAlLlistat()"/>
+        <pokeLlistat itemView0="llistat" :itemData1="enviarDadesAlLlistat()"/>
     </div>
 </div>
 </template>

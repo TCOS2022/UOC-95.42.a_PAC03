@@ -41,10 +41,10 @@
     </div>
 
     <div class="llistats">
-        <!--
-        <h2> BLOC DE LES POKECARDS </h2>
+        <!---->
+        <h2 style="display:block"> COMBAT DE  POKECARDS </h2>
         <br><br>
-        -->
+        <!---->
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->
         <pokeLlistat itemView1="combat" :itemData1="enviarDadesAlLlistat()"/>
     </div>

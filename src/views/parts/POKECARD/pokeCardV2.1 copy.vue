@@ -24,16 +24,16 @@
 <template>
     <div class="pokeContainer">
 
-        <article class="pokeCard " :id="retornaPokeID()">
-            <div class="vistaActiva llistat detall">
-                <!--
+        <article class="pokeCard" :id="retornaPokeID()">
+
+            <section class="poke_tapa">
                 <div class="vistaActiva combat">
-                    <section class="poke_tapa">
-                        <img src='media/imatges/pokeCards/pokemonCard_backside2.png' alt=''>
-                    </section>
+                    <img src='media/imatges/pokeCards/pokemonCard_backside2.png' alt=''>
                 </div>
-                -->
-                <section class="poke_contingut">   
+            </section>
+
+            <section class="poke_contingut">
+                <div class="vistaActiva llistat detall combat">
                     <div class="pokeImg">
                         <div class="pID">
                             <span class="pokeId0">ID:</span>
@@ -60,78 +60,31 @@
                             <span class="pokeDef1"> [ {{ itemData.pokeDef }} ] </span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="vistaActiva combat">
-                        <div class="pokeTypes">
-                            <div class="pTypes">
-                                <span class="pokeType0">Tipus declarats:</span><br>
-                                <span v-for = "(type1) in itemData.types1"  class="pokeType1" > [ {{ type1 }} ] </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pokeControls">
-                        <div class="vistaActiva llistat">
-                            <!-- li pasem al btn el id del poke pq pugui carregar correctament les dades -->
-                            <button @:click="btnDetall(itemData.id)">MES DADES [{{itemData.id}}]</button>
-                        </div>
-                        <div class="vistaActiva detall">
-                            <button @:click="btnRetorn()">RETORNAR</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="vistaActiva combat">
-                <section class="poke_tapa">
-                        <img src='media/imatges/pokeCards/pokemonCard_backside2.png' alt=''>
-                </section>
-                <section class="poke_contingut">   
-                    <div class="pokeImg">
-                        <div class="pID">
-                            <span class="pokeId0">ID:</span>
-                            <span class="pokeId1">[ {{ itemData.id }} ] </span>
-                        </div>
-                        <div class="pImg">
-                            <!-- <span>URL1: {{this.itemData.imgFrontURL}}</span><br> -->
-                            <img :src='recoverURLImage(1)' alt='Imatge frontal'>
-                            <img :src='recoverURLImage(2)' alt='Imatge posterior'>
-                        </div>
-                        <div class="pName">
-                            <span class="pokeName0">NOM:</span>
-                            <span class="pokeName1"> [ {{ itemData.name }} ] </span>
-                        </div>
-                    </div>
-
+                <div class="vistaActiva combat">
                     <div class="pokeData">
-                        <div class="pAtk">
-                            <span class="pokeAtk0">Atac:</span><br>
-                            <span class="pokeAtk1"> [ {{ itemData.pokeAtk }} ] </span>
-                        </div>
-                        <div class="pDef">
-                            <span class="pokeDef0">Defensa:</span><br>
-                            <span class="pokeDef1"> [ {{ itemData.pokeDef }} ] </span>
-                        </div>
-                    </div>
-
-                    <div class="pokeTypes">
-                        <div class="pTypes">
-                            <span class="pokeType0">Tipus declarats:</span><br>
+                        <div class="ptypes">
+                            <span class="pokeType1">Tipus declarats:</span><br>
                             <span v-for = "(type1) in itemData.types1"  class="pokeType1" > [ {{ type1 }} ] </span>
                         </div>
                     </div>
+                </div>
 
+                <div class="vistaActiva llistat">
                     <div class="pokeControls">
-                        <div class="vistaActiva llistat">
-                            <!-- li pasem al btn el id del poke pq pugui carregar correctament les dades -->
-                            <button @:click="btnDetall(itemData.id)">MES DADES [{{itemData.id}}]</button>
-                        </div>
-                        <div class="vistaActiva detall">
-                            <button @:click="btnRetorn()">RETORNAR</button>
-                        </div>
+                        <!-- li pasem al btn el id del poke pq pugui carregar correctament les dades -->
+                        <button @:click="btnDetall(itemData.id)">MES DADES [{{itemData.id}}]</button>
                     </div>
-                </section>
-            </div>  
+                </div>
+
+                <div class="vistaActiva detall">
+                    <div class="pokeControls">
+                        <button @:click="btnRetorn()">RETORNAR</button>
+                    </div>
+                </div>
+            </section>
+
         </article>  
 
     </div>
@@ -260,17 +213,9 @@ export default {
             console.log("Activant render de visualitzacio ....")
             console.log("Vista demanada: ", tipusVista)
             let marcadors = document.querySelectorAll(".vistaActiva")
-            let articlesContainer=""
             switch(tipusVista)
                 {
                 case "llistat": /* Vista LLISTAT */
-                                // Eliminem el 2 article, quee s epr llistat/detall
-                                // per elininar el 1er pargraf de cada div ....
-                                //  var primerParrafo = document.querySelectorAll(«div p»)[0];
-                                //  primerParrafo.parentNode.removeChild(primerParrafo);
-                                // articlesContainer = document.querySelector("pokeContainer")
-                                // articlesContainer.removeChild(articlesContainer.lastElementChild);
-
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
@@ -283,15 +228,7 @@ export default {
                                     }
                                 });
                                 break;
-
                 case "detall":  /* Vista DETALL */
-                                // Eliminem el 2 article, quee s epr llistat/detall
-                                // per elininar el 1er pargraf de cada div ....
-                                //  var primerParrafo = document.querySelectorAll(«div p»)[0];
-                                //  primerParrafo.parentNode.removeChild(primerParrafo);
-                                // articlesContainer = document.querySelector("pokeContainer")
-                                // articlesContainer.removeChild(articlesContainer.lastElementChild);
-
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
@@ -306,13 +243,6 @@ export default {
                                 break;
 
                 case "combat":  /* Vista COMBAT */
-                                // Eliminem el 1 article, quee s epr llistat/detall
-                                // per elininar el 1er pargraf de cada div ....
-                                //  var primerParrafo = document.querySelectorAll(«div p»)[0];
-                                //  primerParrafo.parentNode.removeChild(primerParrafo);
-                                // articlesContainer = document.querySelector("pokeContainer")
-                                // articlesContainer.removeChild(articlesContainer.firstElementChild);
-
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
@@ -324,7 +254,6 @@ export default {
                                         element.style.display = "none"
                                     }
                                 });
-
                                 // Com es un  combat, cal que li asignem 2 coses mes:
                                 //  1) event click a article.pokeCard
                                 //  2) estils especials a la poke_tapa i al poke_contingut
@@ -342,7 +271,6 @@ export default {
 
                                 */
                                 let anclaPoke = document.getElementById(this.itemData.id)
-                                //let anclaPoke = document.querySelector("article.pokeCard.vistaActiva.combat")
                                 anclaPoke.addEventListener("click",()=>{this.pokeClickEvent()}) // cal funcio anonima si volem pasar parametres
                                 break;  
 
@@ -371,7 +299,7 @@ export default {
         },
         btnRetorn:function(){
             // Avisem per la consola
-            console.log("Has premut RETORN!! ",this.itemData.id)
+            console.log("Has premut RETORN!! ",pokeID)
             // this.$router.push("/detall")
             this.$router.push('/llistat'); 
         },
@@ -513,5 +441,74 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* *********** LLISTAT / DETALL / COMBAT ********************** */
+    .pokeContainer{
+        background-color: lightskyblue;
+        width: 90%;
+        margin:0 auto;
+        padding:1rem;
+    }
+
+    .poke_tapa img{height: 20rem;}
+    .pImg img{height: 5rem;width: 50%;}
+
+    /* ***************************************** */
+    /* *********** COMBAT ********************** */
+
+    div.pokeContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    -webkit-perspective:1200;
+    -moz-perspective:1200;
+    perspective: 1200;
+    display:flex;
+    width: 200px; height: 200px;
+    }
+    article.pokeCard {
+    position:relative;
+    /* Afegim la gestio heredada dels efectes 3D */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all 5s ease;
+    /* Li posem un border pq ajusti be quant sigui activada */
+    border: var(--color1) 5px solid;
+    border-radius: 25px;
+    }
+    
+    article.pokeCard.activada {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: var(--atac) 5px solid;
+    border-radius: 25px;
+    }
+    .poke_tapa, .poke_contingut{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* Posem la cara del darrera del div oculta */
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    }
+    .poke_tapa img {width: max-content}
+    .poke_contingut{
+    position:absolute;
+    top:0;
+    left:0;
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    }
+
 </style>

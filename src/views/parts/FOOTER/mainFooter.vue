@@ -1,15 +1,20 @@
 <template>
     <!-- Seccio de FOOTER principal de la pagina -->
     <section class="S1">
-        LSSI / RGPD / ARCO
+        <span>LSSI / RGPD / ARCO</span><br>
+        <!--
         <footerFidel />
+        -->
     </section>
     <section class="S2">
-        WEB 
+        <span>WEB </span><br>
+        <br>
+        <!--
         <footerIrene />
+        -->
     </section>
     <section class="S3">
-        <span>Technologies</span>
+        <span>Technologies</span><br><br>
         <footerTechnologies />
     </section>
 </template>

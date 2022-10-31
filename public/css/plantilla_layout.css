@@ -189,7 +189,7 @@ footer{display:flex;justify-content: space-around;}
 /* ------------------------------------------------------------ */
 
 
-/* ------------------ CONTENTS LLISTAT/COMBAT ----------------- */
+/* ------------------ CONTENTS COMUNS DE LLISTAT/DETALL/COMBAT --- */
 .blocFilter{background-color: lightyellow; width:95%; margin:0 auto; padding:1rem;}
 .blocFilter .filtre{}
 .blocFilter .llistats{}
@@ -197,13 +197,23 @@ footer{display:flex;justify-content: space-around;}
 .blocFilter .llistats ul.llistatPokes0{display:flex; list-style: none; flex-wrap: wrap;}
 .blocFilter .llistats ul.llistatPokes0 li{min-width: 20%; margin-top: 0.5rem;}
 /* a partir de aqui es el component de pokecard en si */
-.pokeContainer{}
+.pokeContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    -webkit-perspective:1200;
+    -moz-perspective:1200;
+    perspective: 1200;
+    display:flex;
+    flex-wrap: wrap;
+}
+.pokeContainer .pokeCard{background-color: var(--color03)}
+/*
 .pokeContainer .pokeCard{}
 .pokeContainer .pokeCard .poke_tapa{}
 .pokeContainer .pokeCard .poke_contingut{}
+*/
 
 /* Importat de la PAC02 */
-.pokeCard { position: relative; width: min-content; border: 5px solid; border-radius: 10%; }
+.pokeCard { position: relative; width: 15rem; border: 5px solid; border-radius: 10%; }
 .pokeImg, .pokeData, .pokeBtn { height: 33%; position: relative; overflow: hidden; margin: 5px 0px; }
 .pokeImg .pID, .pokeImg .pImg, .pokeImg .pName { width: 100%; }
 .pokeImg .pID { text-align: left; padding: 10px; }
@@ -218,10 +228,11 @@ footer{display:flex;justify-content: space-around;}
 .pokeData { position: relative; height: 50%; display: flex; justify-content: space-around; margin: 10px 0px; }
 .pokeData span { text-align: center; }
 .pokeData .pAtk, .pokeData .pDef { border: 5px solid var(--color2); background-color: var(--defensa); border-radius: 50%; width: 45%; padding: 25px; }
-.pokeData .pAtk { background-color: var(--atac); color: var(--font_color); }
-.pokeData .pDef { background-color:  var(--defensa); color: var(--font_color); }
+.pokeData .pAtk { background-color: var(--atac); color: var(--font_color); white-space: nowrap;}
+.pokeData .pDef { background-color:  var(--defensa); color: var(--font_color); white-space: nowrap;}
+.pokeData .pAtk .pokeAtk0 {text-align: center; margin:0 auto; }
 .pokeData .pAtk .pokeAtk1 {color: var(--font_color); font-weight: bolder; }
-.pokeData .pDef .pokeDef0 {color: var(--font_color);font-weight: bolder;}
+.pokeData .pDef .pokeDef0 {color: var(--font_color);font-weight: bolder; text-align: center; margin:0 auto;}
 .pokeBtn .pBtn { display: block; margin: 10px 50px; padding: 5px; background-color: var(--color2); color: var(--color2); border: 2px solid var(--color3); border-radius: 5px; }
 .pokeTypes { display: block; width: 75%; text-align: center; padding: 10px; background-color: var(--color2); border: 5px solid var(--color1); margin: auto; }
 .pokeTypes .pTypes { display: block; padding: 10px; border: 2px solid var(--font_color); text-align: center; width: 100%; margin: auto; }
@@ -230,6 +241,54 @@ footer{display:flex;justify-content: space-around;}
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS COMBAT ONLY--------------------- */
+/*div.pokeContainer{}*/
+.pokeContainer .pokeCard>div.combat{background-color: var(--color05);}
+.pokeContainer .pokeCard>div.combat{
+    position:relative;
+    /* Afegim la gestio heredada dels efectes 3D */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all 5s ease;
+    /* Li posem un border pq ajusti be quant sigui activada */
+    border: var(--color1) 5px solid;
+    border-radius: 25px;    
+}
+.pokeContainer .pokeCard.activada>div.combat {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform: rotateY(180deg);
+    border: var(--atac) 5px solid;
+    border-radius: 25px;
+}
+.pokeContainer .pokeCard>div.combat .poke_tapa, .pokeContainer .pokeCard>div.combat .poke_contingut{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* Posem la cara del darrera del div oculta */
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+}
+.pokeContainer .pokeCard>div.combat .poke_tapa img {width: max-content}
+.pokeContainer .pokeCard>div.combat .poke_contingut{
+    position:absolute;
+    top:0;
+    left:0;
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS DETALL ------------------------- */

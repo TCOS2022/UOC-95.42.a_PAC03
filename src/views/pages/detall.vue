@@ -13,12 +13,13 @@
             </div>
 
             <div class="contents">
-                <!-- <h4>DETALL</h4> -->
+                <!-- <h4>DETALL</h4> 
                 <p>**************</p>
                 <p>Dades rebude via url: $route.query.pokeID</p>
                 <p>{{$route.query.pokeID}}</p>
                 <p>{{dadesPerEnviar}}</p>
                 <p>**************</p>
+                -->
                 <!-- -->
                 <pokeCard0 itemView="detall" :itemData="enviarAlPokeCard()" />
                 <!---->
