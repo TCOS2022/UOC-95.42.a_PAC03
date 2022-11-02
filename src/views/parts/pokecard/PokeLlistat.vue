@@ -27,10 +27,10 @@
 
 <script>
 // Definim imports
-import pokeCard0 from "@/views/parts/pokecard/pokeCardV2.1.vue"
+import pokeCard0 from "@/views/parts/pokecard/PokeCard.vue"
 // Definim export
 export default {
-    name:"pokeLlistatV1.0",
+    name:"PokeLlistat",
     components:{pokeCard0},
     props:{
         items:{},

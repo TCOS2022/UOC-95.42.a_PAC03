@@ -29,12 +29,12 @@
     // Importem els funcions de localStorage de la seva llibreria
     // Fem el export
     export default {
-        name:"tsLinksV1.vue",
+        name:"TsLinks.vue",
         components:{},
         props:{},
-        data:()=>{
+        data:()=>{ return{
             themeSelected:""
-        },
+        }},
         methods:{
             changeActiveClass:function(e){
                 /** Canviem la clase activa al element */

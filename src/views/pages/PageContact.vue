@@ -24,12 +24,12 @@
 </template>
 
 <script>
-    import mainHeader0 from "@/views/parts/header/mainHeaderV2.vue";
-    import mainFooter0   from "@/views/parts/footer/mainFooter.vue";
-    import contact0 from "@/views/parts/MAIN/CONTACTE/mainContacteV1.vue";
+    import mainHeader0 from "@/views/parts/header/MainHeader.vue";
+    import mainFooter0 from "@/views/parts/footer/MainFooter.vue";
+    import contact0    from "@/views/parts/main/contacte/MainContacte.vue";
     
     export default {
-    name: "contact.vue",
+    name: "PageContact.vue",
     components: {mainHeader0, mainFooter0,contact0}
     }
 </script>

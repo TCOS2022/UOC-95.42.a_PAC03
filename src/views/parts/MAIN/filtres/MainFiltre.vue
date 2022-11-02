@@ -72,7 +72,7 @@
 export default {
     /* -- OptionAPI FORMAT -- */
     /* Definim un nom, opcional, pel component */
-    name: "mainFiltreV1.2_optionAPI",
+    name: "MainFiltre",
 
     /* Definim les props que son les ENTRADES al component, JA son REACTIVES */
     props: {

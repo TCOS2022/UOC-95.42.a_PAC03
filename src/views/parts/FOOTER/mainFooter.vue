@@ -19,11 +19,14 @@
     </section>
 </template>
 
-<script setup>
+<script>
     // Importem els components ..... 
-    import footerTechnologies from "@/views/parts/FOOTER/footerTechnologies.vue"
-    import footerFidel        from "@/views/parts/FOOTER/footerFidel.vue"
-    import footerIrene        from "@/views/parts/FOOTER/footerIrene.vue"
+    import footerTechnologies from "@/views/parts/footer/FooterTechnologies.vue";
+    // Definim exports **********************************************************************
+    export default {
+        name: "MainFooter",
+        components: {footerTechnologies},
+    };
 </script>
 
 <style scoped>

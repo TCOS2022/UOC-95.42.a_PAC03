@@ -55,7 +55,7 @@
 // Imports necesaris pq funcioni
     // Components
     //import pokeCardComponent from "@/views/parts/pokecard/pokeCardV2.vue"
-    import pokeLlistat from "@/views/parts/pokecard/pokellistatV1.0.vue"
+    import pokeLlistat from "@/views/parts/pokecard/PokeLlistat.vue"
     // Funcions
     import {
         numeroMaximPokesV2, 

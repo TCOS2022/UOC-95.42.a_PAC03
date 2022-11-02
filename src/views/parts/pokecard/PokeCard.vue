@@ -145,7 +145,7 @@ import {dadesPokeByIDV2} from "@/assets/js/libs/lib_pokeAPI.js"
 /* Exportacions a template i outbounds */
 export default {
     /* Nom asignat */
-    name: "pokeCardV2",
+    name: "PokeCard",
     /* Dades rebudes */
     props: {
         itemView: {

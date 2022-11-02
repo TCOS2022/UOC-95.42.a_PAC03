@@ -38,9 +38,9 @@
 
 <script>
     /* Importem els elements que integrem al template */
-    import mainHeader0 from "@/views/parts/header/mainHeaderV2.vue";
-    import mainFooter0   from "@/views/parts/footer/mainFooter.vue";
-    import pokeCard0    from "@/views/parts/pokecard/pokeCardV2.1.vue";
+    import mainHeader0 from "@/views/parts/header/MainHeader.vue";
+    import mainFooter0 from "@/views/parts/footer/MainFooter.vue";
+    import pokeCard0   from "@/views/parts/pokecard/PokeCard.vue";
 
     import {
         numeroMaximPokesV2, 
@@ -53,7 +53,7 @@
 
 
     export default{
-        name:"detall.vue",
+        name:"PageDetall.vue",
         components:{pokeCard0,mainHeader0,mainFooter0},
         props:{
             pokeID:{

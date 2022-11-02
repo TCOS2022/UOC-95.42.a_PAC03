@@ -33,7 +33,7 @@
 /* Importacions de components */
 /* Exportacions a template i outbounds */
 export default {
-    name: "mainTitleV2",
+    name: "MainTitle.vue",
     props: {
         contentTitleArray:{
                 type:[Array,Object],

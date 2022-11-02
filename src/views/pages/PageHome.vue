@@ -20,11 +20,16 @@
     </div>
 </template>
 
-<script setup>
+<script>
     /* Importem els elements que integrem al template */
-    import mainHeaderV2 from "@/views/parts/HEADER/mainHeaderV2.vue"
-    import mainFooter   from "@/views/parts/FOOTER/mainFooter.vue"
-    import mainHome     from "@/views/parts/MAIN/HOME/mainHomeV1.vue"
+    import mainHeaderV2 from "@/views/parts/header/MainHeader.vue"
+    import mainFooter   from "@/views/parts/footer/MainFooter.vue"
+    import mainHome     from "@/views/parts/main/home/MainHome.vue"
+
+    export default {
+    name: "PageHome",
+    components: {mainHeaderV2, mainFooter,mainHome}
+} 
 </script>
 
 <style>

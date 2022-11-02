@@ -8,7 +8,7 @@
         </header>
 
         <main>
-            <div class="loader">
+            <div class="loader" style="display:none">
                 <!-- <h3>LOADER</h3> -->
                 <img src="media/imatges/animacions/loading_v2.gif" alt="" srcset="">
             </div>
@@ -32,12 +32,12 @@
 /* Mode API */
 // Definim imports **********************************************************************
     // Components
-    import header01   from "@/views/parts/HEADER/mainHeaderV2.vue"
-    import combatAmbFiltre from "@/components/combatAmbFiltre.vue"
+    import header01        from "@/views/parts/header/MainHeader.vue"
+    import combatAmbFiltre from "@/components/CombatAmbFiltre.vue"
 
 // Definim exports **********************************************************************
 export default {
-    name: "llistatV1.2",
+    name: "PageCombat",
     components: {header01, combatAmbFiltre}
 }    
 </script>

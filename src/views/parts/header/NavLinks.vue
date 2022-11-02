@@ -47,7 +47,7 @@
 /* Importacions de components */
 /* Exportacions a template i outbounds */
     export default {
-        name: "navLinksV2",
+        name: "NavLinks.vue",
         props: {
             contentNavArray:{
                     type:[Array,Object],

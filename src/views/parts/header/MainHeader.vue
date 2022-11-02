@@ -22,27 +22,32 @@
     <div class="mainHeader">
         <!-- Seccio de HEADER principal de la pagina -->
         <div class="mainTitle">
-            <mainTitleV2 />
+            <mainTitle />
         </div>
 
         <nav class="mainNav">
             <ul>
                 <li>
-                    <navLinksV2 />
+                    <navLinks />
                 </li>
                 <li>
-                    <tsLinksV1 />
+                    <tsLinks />
                 </li>
             </ul>
         </nav>
     </div>
 </template>
 
-<script setup>
+<script>
     // Importem els components ..... 
-    import mainTitleV2 from "@/views/parts/HEADER/mainTitleV2.vue"
-    import navLinksV2  from "@/views/parts/HEADER/navLinksV2.vue"
-    import tsLinksV1   from "@/views/parts/HEADER/tsLinksV1.vue"
+    import mainTitle from "@/views/parts/header/MainTitle.vue"
+    import navLinks  from "@/views/parts/header/NavLinks.vue"
+    import tsLinks   from "@/views/parts/header/TsLinks.vue"
+    // Definim exports **********************************************************************
+    export default {
+        name: "MainTitle.vue",
+        components: {mainTitle, navLinks,tsLinks}
+    }    
 </script>
 
 

@@ -7,7 +7,7 @@
         </header>
 
         <main>
-            <div class="loader">
+            <div class="loader" style="display:none">
                 <!-- <h3>LOADER</h3> -->
                 <img src="media/imatges/animacions/loading_v2.gif" alt="" srcset="">
             </div>
@@ -30,12 +30,12 @@
 /* Mode API */
 // Definim imports **********************************************************************
     // Components
-    import header01   from "@/views/parts/HEADER/mainHeaderV2.vue"
-    import llistatAmbFiltre from "@/components/llistatAmbFiltre.vue"
+    import header01         from "@/views/parts/header/MainHeader.vue"
+    import llistatAmbFiltre from "@/components/LlistatAmbFiltre.vue"
 
 // Definim exports **********************************************************************
 export default {
-    name: "llistatV1.2",
+    name: "PageLlistat",
     components: {header01, llistatAmbFiltre}
 }    
 </script>
