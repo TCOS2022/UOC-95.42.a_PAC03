@@ -82,9 +82,11 @@
                 </section>
             </div>
 
-            <div class="vistaActiva combat">
+            <div class="vistaActiva combat combat1">
                 <section class="poke_tapa">
+                    <!---->
                         <img src='media/imatges/pokeCards/pokemonCard_backside2.png' alt=''>
+                    <!---->
                 </section>
                 <section class="poke_contingut">   
                     <div class="pokeImg">
@@ -121,7 +123,7 @@
                         </div>
                     </div>
 
-                    <div class="pokeControls">
+                    <div class="pokeControls" style="display:none">
                         <div class="vistaActiva llistat">
                             <!-- li pasem al btn el id del poke pq pugui carregar correctament les dades -->
                             <button @:click="btnDetall(itemData.id)">MES DADES [{{itemData.id}}]</button>

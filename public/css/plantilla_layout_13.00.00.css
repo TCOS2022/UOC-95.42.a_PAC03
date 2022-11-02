@@ -243,8 +243,8 @@ footer{display:flex;justify-content: space-around;}
 /* ------------------ CONTENTS COMBAT ONLY--------------------- */
 /* class => vistaActivada combat
 /*pokeCard>div.vistaActiva.combat.combat1 {}*/
-.pokeContainer .pokeCard>div.combat1{background-color: var(--color05);}
-div.combat1{
+.pokeContainer .pokeCard>div.combat{background-color: var(--color05);}
+.pokeContainer .pokeCard>div.combat{
     position:relative;
     /* Afegim la gestio heredada dels efectes 3D */
     -moz-transform-style:preserve-3d;
@@ -256,7 +256,7 @@ div.combat1{
     border: var(--color1) 5px solid;
     border-radius: 25px;    
 }
-.pokeContainer .pokeCard.activada>div.combat1 {
+.pokeContainer .pokeCard.activada>div.combat {
     /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
     -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
@@ -264,7 +264,7 @@ div.combat1{
     border: var(--atac) 5px solid;
     border-radius: 25px;
 }
-div.combat1 .poke_tapa, div.combat1 .poke_contingut{
+.pokeContainer .pokeCard>div.combat .poke_tapa, .pokeContainer .pokeCard>div.combat .poke_contingut{
     /* Afegim atributs comuns a les dues cares */
     /* Ens asegurem de qeu omplin els divs ... */
     height: 100%;
@@ -279,8 +279,8 @@ div.combat1 .poke_tapa, div.combat1 .poke_contingut{
     -webkit-transform-style:preserve-3d;
     transform-style: preserve-3d;
 }
-div.combat1 .poke_tapa img {min-width: 100%}
-div.combat1 .poke_contingut{
+.pokeContainer .pokeCard>div.combat .poke_tapa img {width: 100%}
+.pokeContainer .pokeCard>div.combat .poke_contingut{
     position:absolute;
     top:0;
     left:0;
@@ -290,18 +290,13 @@ div.combat1 .poke_contingut{
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    flex-wrap:nowrap;
-    /* max-height:100%; */
-    height:auto;
+    flex-wrap: nowrap;
 }
-div.combat1 .poke_contingut>div{
+.pokeContainer .pokeCard>div.combat .poke_contingut>div{
     /* aixo son els flex items !!!! */
     position: relative;
     height: 25%;
     border:green 5px solid;
-    margin:0;
-    height: auto;
-    width: auto;
 }
 .pokeContainer .pokeCard>div.combat .poke_contingut>div:first-child{
     /* aixo son els flex items !!!! */
@@ -318,7 +313,7 @@ div.combat1 .poke_contingut>div{
     flex-wrap: nowrap;
 }
 .pokeContainer .pokeCard>div.combat .poke_contingut .pokeImg .pImg img{
-    width: 50%;
+    width: 45%;
 }
 /* ------------------------------------------------------------ */
 
