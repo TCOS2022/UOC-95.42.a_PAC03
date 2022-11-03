@@ -7,7 +7,7 @@
 
     DESCRIPCIO:
 
-    Arxiu que defineix el layout de la app      
+    Arxiu que defineix el layout de la app
 
     import: plantilla_colors.css
 
@@ -128,21 +128,21 @@ MAIN CONTACT CONTENTS
 div.pageContainer{
     position:relative;
     margin: 1.5rem auto;
-    border: var(--bg_color) solid 5px;
+    border: var(--color01) solid 5px;
     /* border: var(--color03) solid 25px; */
     border-radius: 0 2rem 0 2rem;
-    /*padding: 2rem;*/
+    padding: 2rem;
     display:flex;
     flex-direction: column;
-    /*width:90%;*/
+    width:90%;
     /* Asignem el color segons la variable del tema */
-    background-color: var(--color2);
+    background-color: var(--bg_color00);
     color: var(--color00)
 }
 
 header, main, footer {
     width: 100%;
-    border:var(--color2) solid 0.5px;
+    border:var(--color04) solid 2.5px;
     /*border-radius: 2rem;*/
     min-height:25px
 }
@@ -190,20 +190,11 @@ footer{display:flex;justify-content: space-around;}
 
 
 /* ------------------ CONTENTS COMUNS DE LLISTAT/DETALL/COMBAT --- */
-.blocFilter{background-color: var(--color2); /*width:95%; margin:0 auto; padding:1rem;*/}
-.blocFilter .filtre{background-color: var(--color2);}
-.blocFilter .llistats{background-color: var(--color2)}
-.blocFilter .llistats .pokeLlistat{background-color: var(--color2); width: 90%; margin:0 auto; padding:1rem;}
-.blocFilter .llistats ul.llistatPokes0{    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
-};
-
-.pokeLlistat{background-color: var(--color2);}
+.blocFilter{background-color: lightyellow; width:95%; margin:0 auto; padding:1rem;}
+.blocFilter .filtre{}
+.blocFilter .llistats{}
+.blocFilter .llistats .pokeLlistat{background-color: lightcoral; width: 90%; margin:0 auto; padding:1rem;}
+.blocFilter .llistats ul.llistatPokes0{display:flex; list-style: none; flex-wrap: wrap;}
 .blocFilter .llistats ul.llistatPokes0 li{min-width: 20%; margin-top: 0.5rem;}
 /* a partir de aqui es el component de pokecard en si */
 .pokeContainer{
@@ -214,7 +205,7 @@ footer{display:flex;justify-content: space-around;}
     display:flex;
     flex-wrap: wrap;
 }
-.pokeContainer .pokeCard{background-color: var(--color2)}
+.pokeContainer .pokeCard{background-color: var(--color03)}
 /*
 .pokeContainer .pokeCard{}
 .pokeContainer .pokeCard .poke_tapa{}
@@ -222,61 +213,60 @@ footer{display:flex;justify-content: space-around;}
 */
 
 /* Importat de la PAC02 */
-/*.pokeCard { position: relative; width: 15rem; border: 5px solid; border-radius: 2%; border-color: var(--color4);}
-/*.pokeImg, .pokeData, .pokeBtn { height: 85%; position: relative; overflow: hidden; margin: 5px 0px; }*/
+.pokeCard { position: relative; width: 15rem; border: 5px solid; border-radius: 10%; }
+.pokeImg, .pokeData, .pokeBtn { height: 33%; position: relative; overflow: hidden; margin: 5px 0px; }
 .pokeImg .pID, .pokeImg .pImg, .pokeImg .pName { width: 100%; }
-.pokeImg .pID { text-align: center; padding: 10px;justify-content: center; }
+.pokeImg .pID { text-align: left; padding: 10px; }
 .pokeImg .pID .pokeId0 { color: var(--font_color); font-weight: bolder; }
 .pokeImg .pID .pokeId1 { color: var(--font_color); font-weight: normal; font-style: italic; }
 .pokeImg .pImg { position: relative; height: 100%; text-align: center; }
-.pokeImg .pImg img { position: relative; border: 5px solid; border-radius: 50%; width: 50%; padding: 5px;border-color: var(--color3); }
-/*.pokeImg .pImg img.parella { display: inline-block; width: 45%; }*/
+.pokeImg .pImg img { position: relative; border: 10px solid; border-radius: 50%; width: 90%; padding: 10px; }
+.pokeImg .pImg img.parella { display: inline-block; width: 45%; }
 .pokeImg .pName { text-align: right; }
 .pokeImg .pName .pokeName0 { color: var(--font_color); font-weight: bolder; display: flex; justify-content: center; }
 .pokeImg .pName .pokeName1 { color: var(--font_color); font-weight: normal; font-style: italic; text-transform: capitalize; display: flex; justify-content: space-evenly; }
-/*.pokeData { position: relative; height: 50%; display: flex; justify-content: space-around; margin: 10px 0px; }*/
-/*.pokeData span { text-align: center; }*/
-.pokeData .pAtk, .pokeData .pDef { border: 0.5px solid var(--color2); background-color: var(--defensa); border-radius: 10%; width: 60%; padding: 5px; justify-content: center;}
+.pokeData { position: relative; height: 50%; display: flex; justify-content: space-around; margin: 10px 0px; }
+.pokeData span { text-align: center; }
+.pokeData .pAtk, .pokeData .pDef { border: 5px solid var(--color2); background-color: var(--defensa); border-radius: 50%; width: 45%; padding: 25px; }
 .pokeData .pAtk { background-color: var(--atac); color: var(--font_color); white-space: nowrap;}
 .pokeData .pDef { background-color:  var(--defensa); color: var(--font_color); white-space: nowrap;}
-
-.pokeData .pAtk .pokeAtk0 {color: var(--font_color); font-weight: bolder; text-align: center; margin:0 auto; display: flex;text-justify: distribute;}
-.pokeData .pDef .pokeDef0 {color: var(--font_color);font-weight: bolder; text-align: center; margin:0 auto;display: flex;}
-/*.pokeBtn .pBtn { display: block; margin: 50px 50px; padding: 50px; background-color: var(--color2); color: var(--color2); border: 2px solid var(--color3); border-radius: 5px; }*/
-/*.pokeTypes { display: block; width: 50%; text-align: center; padding: auto; background-color: var(--color2); border: 5px solid var(--color1); margin: auto; }*/
-.pokeTypes .pTypes { display: block; padding: 10px; border: 2px solid var(--font_color); text-align: center; width: 50%; margin: auto; }
+.pokeData .pAtk .pokeAtk0 {text-align: center; margin:0 auto; }
+.pokeData .pAtk .pokeAtk1 {color: var(--font_color); font-weight: bolder; }
+.pokeData .pDef .pokeDef0 {color: var(--font_color);font-weight: bolder; text-align: center; margin:0 auto;}
+.pokeBtn .pBtn { display: block; margin: 10px 50px; padding: 5px; background-color: var(--color2); color: var(--color2); border: 2px solid var(--color3); border-radius: 5px; }
+.pokeTypes { display: block; width: 75%; text-align: center; padding: 10px; background-color: var(--color2); border: 5px solid var(--color1); margin: auto; }
+.pokeTypes .pTypes { display: block; padding: 10px; border: 2px solid var(--font_color); text-align: center; width: 100%; margin: auto; }
 .pokeTypes .pTypes .pokeType1 { color: var(--font_color); }
 
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS COMBAT ONLY--------------------- */
-/*div.pokeContainer{}*/
-.pokeContainer .pokeCard>div.combat{background-color: var(--color2);}
-.pokeContainer .pokeCard>div.combat{
+/* class => vistaActivada combat
+/*pokeCard>div.vistaActiva.combat.combat1 {}*/
+.pokeContainer .pokeCard>div.combat1{background-color: var(--color05);}
+div.combat1{
     position:relative;
     /* Afegim la gestio heredada dels efectes 3D */
-   -moz-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
     -webkit-transform-style:preserve-3d;
     transform-style: preserve-3d;
     /* Definim com volem que siguin les transcicions aplicades */
-   transition: all 5s ease;
+    transition: all 5s ease;
     /* Li posem un border pq ajusti be quant sigui activada */
-    /*border: var(--color1) 5px solid;*/
+    border: var(--color1) 5px solid;
     border-radius: 25px;    
 }
-.pokeContainer .pokeCard.activada>div.combat {
+.pokeContainer .pokeCard.activada>div.combat1 {
     /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
-   -webkit-transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
     transform: rotateY(180deg);
-    /*border: var(--atac) 5px solid;*/
+    border: var(--atac) 5px solid;
     border-radius: 25px;
 }
-.pokeContainer .pokeCard>div.combat .poke_tapa, .pokeContainer .pokeCard>div.combat .poke_contingut{
+div.combat1 .poke_tapa, div.combat1 .poke_contingut{
     /* Afegim atributs comuns a les dues cares */
     /* Ens asegurem de qeu omplin els divs ... */
-    background-color: var(--bg_color);
-    border-radius: 25px;
     height: 100%;
     width: 100%;
     position: relative;
@@ -289,9 +279,8 @@ footer{display:flex;justify-content: space-around;}
     -webkit-transform-style:preserve-3d;
     transform-style: preserve-3d;
 }
-/*.pokeContainer .pokeCard>div.combat .poke_tapa img /*{width: max-content}*//*{width: 250px; height: 534px};*/
-.pokeContainer .pokeCard>div.combat .poke_contingut{
-    
+div.combat1 .poke_tapa img {width: 100%}
+div.combat1 .poke_contingut{
     position:absolute;
     top:0;
     left:0;
@@ -299,8 +288,56 @@ footer{display:flex;justify-content: space-around;}
     -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    /* max-height:100%; */
+    height:auto;
+}
+div.combat1 .poke_contingut>div{
+    /* aixo son els flex items !!!! */
+    position: relative;
+    height: 25%;
+    border:green 5px solid;
+    margin:0;
+    height: auto;
+    width: auto;
+}
+.pokeContainer .pokeCard>div.combat .poke_contingut>div:first-child{
+    /* aixo son els flex items !!!! */
+    height: 50%;
+}
+.pokeContainer .pokeCard>div.combat .poke_contingut .pokeImg{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;    
+}
+.pokeContainer .pokeCard>div.combat .poke_contingut .pokeImg .pImg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.pokeContainer .pokeCard>div.combat .poke_contingut .pokeImg .pImg img{
+    width: 50%;
 }
 
+/* --- COMBAT RESULTAT --- */
+.combatResults{
+    margin: 5px auto;
+    background-color: cadetblue;
+    color: blue;
+    text-align: center;
+}
+.combatResults>span{
+    font-weight: bolder;
+    color: red;
+    background-color: lightblue;
+}
+.combatResults>span>span{
+    font-weight: bolder;
+    color: green;
+    background-color: lightblue;
+}
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS DETALL ------------------------- */
@@ -308,12 +345,15 @@ footer{display:flex;justify-content: space-around;}
 
 
 /* ------------------ CONTENTS CONTACT ------------------------ */
+/*
 .mainContacte{}
 .mainContacte h1{}
+*/
 .mainContacte .contacteDades .logo {width:75%;text-align:center;margin:auto}
+/*
 .mainContacte form{}
 .mainContacte .contacteMaps{}
-
+*/
 /* ------------------------------------------------------------ */
 
 
