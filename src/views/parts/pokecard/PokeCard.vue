@@ -504,8 +504,8 @@ export default {
                         resultat1 = "<span>[ PERD ]</span>"
                     }
                     // Imprimir el resultat
-                    resultat0 = "<span>El Poke [" + cardAtacant_ID + " / " + cardAtacant_NOM + "] ATACA al Poke [" + cardDefensor_ID + " / " + cardDefensor_NOM + "], i "
-                    resultat = resultat0 + resultat1 + "</span>"
+                    resultat0 = "El Poke <span>[" + cardAtacant_ID + " / " + cardAtacant_NOM + "]</span> ATACA al Poke <span>[" + cardDefensor_ID + " / " + cardDefensor_NOM + "]</span>, i "
+                    resultat = "<span>" + resultat0 + resultat1 + "</span>"
                     console.log(resultat)
                     let anclaResultat = document.querySelector(".combatResults")
                     anclaResultat.innerHTML = resultat 

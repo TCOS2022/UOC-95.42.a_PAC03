@@ -302,6 +302,7 @@ footer{display:flex;justify-content: space-around;}
 }
 /* --- COMBAT RESULTAT --- */
 .combatResults{
+    font-size: 1.5rem;
     margin: 5px auto;
     background-color: cadetblue;
     color: blue;
@@ -316,6 +317,11 @@ footer{display:flex;justify-content: space-around;}
     font-weight: bolder;
     color: green;
     background-color: lightblue;
+}
+.combatResults>span>span:last-child{
+    font-weight: bolder;
+    color: blue;
+    background-color: yellow;
 }
 /* ------------------------------------------------------------ */
 
