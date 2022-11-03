@@ -71,7 +71,7 @@
 
 // Exports
     export default {
-        name:"CombatAmbFiltreV1.vue",
+        name:"CombatAmbFiltre.vue",
         components:{
             //pokeCardComponent,
             PokeLlistat},
