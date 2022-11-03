@@ -343,10 +343,6 @@
         updated(){
             console.log("updating ....")
             console.log(".... updating")
-        },
-        beforeDestroy(){
-            console.log("beforedestroy ....")
-            console.log(".... beforeDestroy")
         }
     }
 </script>

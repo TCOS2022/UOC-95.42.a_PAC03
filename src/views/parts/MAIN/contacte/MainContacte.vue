@@ -40,12 +40,12 @@
             </fieldset>
         </form>
 
-        <div class="contacteMap">
+        <div class="contacteMap" style="display:none">
             <h2>Mapes de Situacio .... al Google Maps</h2>
             <div><img src="media/imatges/mapes/earth.jpg" alt="mapa situacio google maps" width="300"></div>   
         </div>
 
-        <div class="contacteVideo">
+        <div class="contacteVideo" style="display:none">
             <!-- Afegim uns videos de youtube per fer provatures -->
             <h2>Uns videos per pasar l' estona .....</h2>
             <h3>SHAKIRA - Dias de Enero</h3>
@@ -54,7 +54,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/xLOQNNWYils" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <div class="contacteLinks">
+        <div class="contacteLinks" style="display:none">
             <!-- Afegim uns links recomanats per fer provatures -->
             <h2>Alguns links recomenats per visitar</h2>
             <h3> Enllaços sobre astronomia </h3>
