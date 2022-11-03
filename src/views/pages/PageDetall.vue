@@ -7,7 +7,7 @@
         </header>
 
         <main>
-            <div class="loader">
+            <div class="loader" style="display:none">
                 <!-- <h4>LOADER</h4> -->
                 <img src="/media/imatges/animacions/loading_v2.gif" alt="" srcset="">
             </div>

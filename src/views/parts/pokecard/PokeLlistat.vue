@@ -11,27 +11,29 @@
             <p>**********************************</p>
             -->
         </div>
+        <div class="combatResults"></div>
+        <br><br>
         <ul class="llistatPokes0">
             <!-- <div v-for="(item, index) in array" :key="index">{{ index }}. {{ item }}</div> -->
             <!-- <pokeCard0 :itemView="enviar_itemView()" :itemData="enviar_itemData(index)"/> -->
             <li v-for="(item,index) in itemData1" :key="index">
                 <!-- <span>ELEMENT Nº: {{index}} / DADES: {{enviar_itemData(index)}}</span> -->
                 <!-- canviar itemView entre "llistat/detall/combat/full" genera les diferents vistes -->
-                <pokeCard0 :itemView="enviar_itemView()" :itemData="enviar_itemData(index)"/>
+                <PokeCard :itemView="enviar_itemView()" :itemData="enviar_itemData(index)"/>
             </li>
         </ul>
         <br>
-        <div class="combatResults"></div>
+
     </div>
 </template>
 
 <script>
 // Definim imports
-import pokeCard0 from "@/views/parts/pokecard/PokeCard.vue"
+import PokeCard from "@/views/parts/pokecard/PokeCard.vue"
 // Definim export
 export default {
-    name:"PokeLlistat",
-    components:{pokeCard0},
+    name:"PokeLlistat.vue",
+    components:{PokeCard},
     props:{
         items:{},
         itemView1:{

@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="vistaActiva combat">
+                    <div class="vistaActiva detall">
                         <div class="pokeTypes">
                             <div class="pTypes">
                                 <span class="pokeType0">Tipus declarats:</span><br>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
 
-                    <div class="pokeTypes">
+                    <div class="pokeTypes" style="display:none">
                         <div class="pTypes">
                             <span class="pokeType0">Tipus declarats:</span><br>
                             <span v-for = "(type1) in itemData.types1"  class="pokeType1" > [ {{ type1 }} ] </span>
@@ -395,6 +395,7 @@ export default {
            if(this.pokeCardCartesActivades()==0){ 
                 // no tenim cap carta activada, aquesta es la primera
                 console.log("CAP carta activada encara, aquesta sera la 1ª")
+                // Netegem area de resultats
                 this.pokeGirarCarta()
             }
            else if(this.pokeCardCartesActivades()==1){ 
@@ -419,6 +420,9 @@ export default {
         },
         pokeCardsReset(){
             /** funcio qeu posa TOTES les cartes tapades */
+            // Esborrem el div de resultats ....
+            let anclaResultat = document.querySelector(".combatResults");
+            anclaResultat.innerHTML = "";
             console.log("COMBAT -> resetejant TOTES les cartes!!!!")
             let anclas = document.querySelectorAll(".pokeCard")
             anclas.forEach(element => {
@@ -484,19 +488,19 @@ export default {
                     // Definim el resultat
                     if (cardAtacant_ATK == cardDefensor_DEF){
                         // EMPAT!!   
-                        resultat1 = "[ EMPATA ]"
+                        resultat1 = "<span>[ EMPATA ]</span>"
                     }
                     else if (cardAtacant_ATK > cardDefensor_DEF){
                         // GUANYA ATACANT
-                        resultat1 = "[ GUANYA ]"
+                        resultat1 = "<span>[ GUANYA ]</span>"
                     }
                     else{
                         // GUANYA DEFENSOR
-                        resultat1 = "[ PERD ]"
+                        resultat1 = "<span>[ PERD ]</span>"
                     }
                     // Imprimir el resultat
-                    resultat0 = "El Poke [" + cardAtacant_ID + " / " + cardAtacant_NOM + "] ATACA al Poke [" + cardDefensor_ID + " / " + cardDefensor_NOM + "], i "
-                    resultat = resultat0 + resultat1
+                    resultat0 = "<span>El Poke [" + cardAtacant_ID + " / " + cardAtacant_NOM + "] ATACA al Poke [" + cardDefensor_ID + " / " + cardDefensor_NOM + "], i "
+                    resultat = resultat0 + resultat1 + "</span>"
                     console.log(resultat)
                     let anclaResultat = document.querySelector(".combatResults")
                     anclaResultat.innerHTML = resultat 

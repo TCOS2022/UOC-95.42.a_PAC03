@@ -320,6 +320,9 @@ div.combat1 .poke_contingut>div{
 .pokeContainer .pokeCard>div.combat .poke_contingut .pokeImg .pImg img{
     width: 50%;
 }
+
+/* --- COMBAT RESULTAT --- */
+.combatResultat{}
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS DETALL ------------------------- */

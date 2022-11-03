@@ -7,7 +7,9 @@
 
         <main>
            <!--  main -->
-            <div class="loader"></div>
+            <div class="loader" style="display:none">
+            </div>
+            
             <div class="contents">
                 <MainContact />
             </div>
