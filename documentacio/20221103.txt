@@ -1,0 +1,9 @@
+Modificacions:
+
+Comprovar i arreglar totes les crides a components que tinguin el nom en CamelCase i siguin compostes i sense numeros
+
+Canviar les dades vistes de llistat / detall / combat
+
+Posar resultat de combat a la aprt de dalt.
+Fer qeu el resultat de combat  s esborri al acabar el combat
+Afegir spans al div de combatResults
