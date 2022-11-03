@@ -279,7 +279,7 @@ div.combat1 .poke_tapa, div.combat1 .poke_contingut{
     -webkit-transform-style:preserve-3d;
     transform-style: preserve-3d;
 }
-div.combat1 .poke_tapa img {min-width: 100%}
+div.combat1 .poke_tapa img {width: 100%}
 div.combat1 .poke_contingut{
     position:absolute;
     top:0;
@@ -322,7 +322,22 @@ div.combat1 .poke_contingut>div{
 }
 
 /* --- COMBAT RESULTAT --- */
-.combatResultat{}
+.combatResults{
+    margin: 5px auto;
+    background-color: cadetblue;
+    color: blue;
+    text-align: center;
+}
+.combatResults>span{
+    font-weight: bolder;
+    color: red;
+    background-color: lightblue;
+}
+.combatResults>span>span{
+    font-weight: bolder;
+    color: green;
+    background-color: lightblue;
+}
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS DETALL ------------------------- */

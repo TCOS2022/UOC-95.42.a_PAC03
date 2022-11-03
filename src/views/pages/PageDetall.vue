@@ -62,7 +62,7 @@
             },
             itemData:{
                 type:Array,
-                default:[{}]
+                default:()=>{}
             }
         },
         data:function(){return {
