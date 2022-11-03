@@ -46,7 +46,7 @@
         <br><br>
         <!---->
         <!-- <pokeLlistat :itemData="enviarDadeAlLlistat()" /> -->
-        <pokeLlistat itemView1="combat" :itemData1="enviarDadesAlLlistat()"/>
+        <PokeLlistat itemView1="combat" :itemData1="enviarDadesAlLlistat()"/>
     </div>
 </div>
 </template>
@@ -55,7 +55,7 @@
 // Imports necesaris pq funcioni
     // Components
     //import pokeCardComponent from "@/views/parts/pokecard/pokeCardV2.vue"
-    import pokeLlistat from "@/views/parts/pokecard/PokeLlistat.vue"
+    import PokeLlistat from "@/views/parts/pokecard/PokeLlistat.vue"
     // Funcions
     import {
         numeroMaximPokesV2, 
@@ -71,10 +71,10 @@
 
 // Exports
     export default {
-        name:"llistatAmbFiltreV1.vue",
+        name:"CombatAmbFiltreV1.vue",
         components:{
             //pokeCardComponent,
-            pokeLlistat},
+            PokeLlistat},
         props:{},
         data:function(){ return{
             // Valors generals al template
