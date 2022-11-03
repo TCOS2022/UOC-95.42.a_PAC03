@@ -300,7 +300,23 @@ footer{display:flex;justify-content: space-around;}
     -moz-transform:rotateY(180deg);
     transform: rotateY(180deg);
 }
-
+/* --- COMBAT RESULTAT --- */
+.combatResults{
+    margin: 5px auto;
+    background-color: cadetblue;
+    color: blue;
+    text-align: center;
+}
+.combatResults>span{
+    font-weight: bolder;
+    color: red;
+    background-color: lightblue;
+}
+.combatResults>span>span{
+    font-weight: bolder;
+    color: green;
+    background-color: lightblue;
+}
 /* ------------------------------------------------------------ */
 
 /* ------------------ CONTENTS DETALL ------------------------- */

@@ -8,6 +8,6 @@ Posar resultat de combat a la aprt de dalt.
 Fer qeu el resultat de combat  s esborri al acabar el combat
 Afegir spans al div de combatResults
 
-Comentar variables que no es fan servir
+Comentar variables/funicons/components que no es fan servir
 
 Afegir plantilla_layout del Fidel
