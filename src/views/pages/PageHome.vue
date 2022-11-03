@@ -2,33 +2,33 @@
     <div class="pageContainer">
         <header>
             <!-- Aqui va el HEADER carregat de manera dinamica -->
-            <mainHeaderV2 />
+            <MainHeader />
         </header>
         
         <main>
             <div class="loader"></div>
             <div class="contents">
                 <!-- Aqui va el MAIN carregat de manera dinamica -->
-                <mainHome />
+                <MainHome />
             </div>
         </main>
         
         <footer>
             <!-- Aqui va el FOOTER carregat de manera dinamica -->
-            <mainFooter />
+            <MainFooter />
         </footer>
     </div>
 </template>
 
 <script>
     /* Importem els elements que integrem al template */
-    import mainHeaderV2 from "@/views/parts/header/MainHeader.vue"
-    import mainFooter   from "@/views/parts/footer/MainFooter.vue"
-    import mainHome     from "@/views/parts/main/home/MainHome.vue"
+    import MainHeader from "@/views/parts/header/MainHeader.vue"
+    import MainFooter from "@/views/parts/footer/MainFooter.vue"
+    import MainHome   from "@/views/parts/main/home/MainHome.vue"
 
     export default {
     name: "PageHome",
-    components: {mainHeaderV2, mainFooter,mainHome}
+    components: {MainHeader, MainFooter, MainHome}
 } 
 </script>
 

@@ -3,7 +3,7 @@
 
         <header>
             <!-- <h3>HEADER</h3> -->
-            <header01 />
+            <MainHeader />
         </header>
 
         <main>
@@ -15,7 +15,7 @@
             <div class="contents">
                 <!-- <h3>CONTENTS</h3> -->
                 <!-- <filtreIllistat01 /> -->
-                <llistatAmbFiltre />
+                <LlistatAmbFiltre />
             </div>
         </main>
 
@@ -30,13 +30,13 @@
 /* Mode API */
 // Definim imports **********************************************************************
     // Components
-    import header01         from "@/views/parts/header/MainHeader.vue"
-    import llistatAmbFiltre from "@/components/LlistatAmbFiltre.vue"
+    import MainHeader       from "@/views/parts/header/MainHeader.vue"
+    import LlistatAmbFiltre from "@/components/LlistatAmbFiltre.vue"
 
 // Definim exports **********************************************************************
 export default {
     name: "PageLlistat",
-    components: {header01, llistatAmbFiltre}
+    components: {MainHeader, LlistatAmbFiltre}
 }    
 </script>
 

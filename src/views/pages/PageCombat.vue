@@ -4,7 +4,7 @@
 
         <header>
             <!-- <h3>HEADER</h3> -->
-            <header01 />
+            <MainHeader />
         </header>
 
         <main>
@@ -16,7 +16,7 @@
             <div class="contents">
                 <!-- <h3>CONTENTS</h3> -->
                 <!-- <filtreIllistat01 /> -->
-                <combatAmbFiltre />
+                <CombatAmbFiltre />
             </div>
         </main>
 
@@ -32,13 +32,13 @@
 /* Mode API */
 // Definim imports **********************************************************************
     // Components
-    import header01        from "@/views/parts/header/MainHeader.vue"
-    import combatAmbFiltre from "@/components/CombatAmbFiltre.vue"
+    import MainHeader       from "@/views/parts/header/MainHeader.vue"
+    import CombatAmbFiltre from "@/components/CombatAmbFiltre.vue"
 
 // Definim exports **********************************************************************
 export default {
     name: "PageCombat",
-    components: {header01, combatAmbFiltre}
+    components: {MainHeader, CombatAmbFiltre}
 }    
 </script>
 

@@ -24,7 +24,7 @@
     import footerTechnologies from "@/views/parts/footer/FooterTechnologies.vue";
     // Definim exports **********************************************************************
     export default {
-        name: "MainFooter",
+        name: "MainFooter.vue",
         components: {footerTechnologies},
     };
 </script>

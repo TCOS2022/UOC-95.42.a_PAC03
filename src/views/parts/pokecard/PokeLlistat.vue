@@ -40,7 +40,7 @@ export default {
         },
         itemData1:{
             type: [Array,Object],
-            default:[{}]
+            default:()=>{return{}}
         }
     },
     data:function(){return {}},

@@ -61,14 +61,14 @@
                     ]
                     */
                     /* v2.1 */
-                    default:[
+                    default:()=>{return[
                             //{class:"linkActivat",icona:"Icon ", nom:"Home",     url:"/"},
                             {class:"",icona:"Icon ", nom:"Home",     url:"/"},
                             {class:"",           icona:"Icon ", nom:"Llistat",  url:"/llistat"},
                             //{class:"",           icona:"Icon ", nom:"Detall",   url:"/detall"},                          
                             {class:"",           icona:"Icon ", nom:"Combat",   url:"/combat"},
                             {class:"",           icona:"Icon ", nom:"Contacte", url:"/contacte"}
-                    ]
+                    ]}
 
             }
         }
@@ -77,7 +77,7 @@
     function setejarClase(){
         // Definim variables
         let claseActivada = "linkActivat"
-        let selector = this.queryselectorAll(li)
+        let selector = this.queryselectorAll("li")
         // Esborrem la clase de TOTS els elements, com es un array ...
         selector.forEach(element => {
             element.class.delete(claseActivada)

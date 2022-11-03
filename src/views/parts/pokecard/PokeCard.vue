@@ -170,7 +170,7 @@ export default {
             }*/
         itemData:{
             type:Object,
-            default: {
+            default: ()=>{return{
                 id: 0,
                 imgFrontURL: "",
                 imgBackURL: "",
@@ -178,7 +178,7 @@ export default {
                 pokeAtk: 999,
                 pokeDef: 999,
                 types1: ["Terra", "Aire", "Aigua", "Foc", "5º Element"]
-            }
+            }}
         }
     },
     data:function(){
@@ -262,7 +262,8 @@ export default {
             console.log("Activant render de visualitzacio ....")
             console.log("Vista demanada: ", tipusVista)
             let marcadors = document.querySelectorAll(".vistaActiva")
-            let articlesContainer=""
+            let articlesContainer="";
+            let anclaPoke="";
             switch(tipusVista)
                 {
                 case "llistat": /* Vista LLISTAT */
@@ -343,7 +344,7 @@ export default {
                                 // he trobat una explicacio aqui: https://foroayuda.es/uso-de-queryselector-con-id-que-son-numeros/#:~:text=Uso%20de%20querySelector%20con%20ID%20que%20son%20n%C3%BAmeros,danos%20de%20tu%20ayuda%20para%20ampliar%20esta%20comunidad.
 
                                 */
-                                let anclaPoke = document.getElementById(this.itemData.id)
+                                anclaPoke = document.getElementById(this.itemData.id);
                                 //let anclaPoke = document.querySelector("article.pokeCard.vistaActiva.combat")
                                 anclaPoke.addEventListener("click",()=>{this.pokeClickEvent()}) // cal funcio anonima si volem pasar parametres
                                 break;  

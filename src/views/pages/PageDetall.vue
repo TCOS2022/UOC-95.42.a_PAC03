@@ -3,7 +3,7 @@
 
         <header>
             <!-- <h3>HEADER</h3> -->
-            <mainHeader0 />
+            <MainHeader />
         </header>
 
         <main>
@@ -21,7 +21,7 @@
                 <p>**************</p>
                 -->
                 <!-- -->
-                <pokeCard0 itemView="detall" :itemData="enviarAlPokeCard()" />
+                <PokeCard itemView="detall" :itemData="enviarAlPokeCard()" />
                 <!---->
             </div>  
         </main>
@@ -29,7 +29,7 @@
         <footer>
             <!-- 
                 <h3>FOOTER</h3>
-                <mainFooter0 />
+                <MainFooter />
              -->
         </footer>
         
@@ -38,9 +38,9 @@
 
 <script>
     /* Importem els elements que integrem al template */
-    import mainHeader0 from "@/views/parts/header/MainHeader.vue";
-    import mainFooter0 from "@/views/parts/footer/MainFooter.vue";
-    import pokeCard0   from "@/views/parts/pokecard/PokeCard.vue";
+    import MainHeader from "@/views/parts/header/MainHeader.vue";
+    import MainFooter from "@/views/parts/footer/MainFooter.vue";
+    import PokeCard   from "@/views/parts/pokecard/PokeCard.vue";
 
     import {
         numeroMaximPokesV2, 
@@ -54,7 +54,7 @@
 
     export default{
         name:"PageDetall.vue",
-        components:{pokeCard0,mainHeader0,mainFooter0},
+        components:{PokeCard, MainHeader, MainFooter},
         props:{
             pokeID:{
                 type:String,

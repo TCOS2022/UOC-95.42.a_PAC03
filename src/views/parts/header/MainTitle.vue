@@ -37,7 +37,7 @@ export default {
     props: {
         contentTitleArray:{
                 type:[Array,Object],
-                default:[{logoURL:"", titol:"PokeDex Machine v3.x [SPA with Vue.js]", imgURL:""}]
+                default:()=>{return[{logoURL:"", titol:"PokeDex Machine v3.x [SPA with Vue.js]", imgURL:""}]}
         }
     }
 }

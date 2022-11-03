@@ -78,7 +78,7 @@ export default {
     props: {
         toFilter:{
             type: Array,
-            default: ["alias", "Sherezade", "Cedric", "Humor", "She-Hulk", "Atlante", "Humbertus", "alita", "Chenoa", "Shakira", "Chewaaka", "Hum"]
+            default:()=>{ ["alias", "Sherezade", "Cedric", "Humor", "She-Hulk", "Atlante", "Humbertus", "alita", "Chenoa", "Shakira", "Chewaaka", "Hum"] }
         }
     },
 
@@ -243,7 +243,7 @@ export default {
             /* comença igual que el filtre */
             /* Definim varaibles locals */
             let limitScan = 0
-            let resultat0=false
+            let resultat0 = false
             let sortida0 = []
             let contadorLletres = 0
             console.log("FILTRE/ENTRADA ES:")
@@ -255,7 +255,7 @@ export default {
             let paraula1 = []
             /* Mirem cuants caracters em de comparar */
             let filtre1 = filtre0.split("")
-            let maxCharsTested = filtre0.length()
+            let maxCharsTested = filtre0.length();
             /* Revisem CADA element de la llista de ENTRADA */ 
             (entrada0).forEach(paraula0 => {
                 /* Convertim la praula del array de entradas en un array .... */
@@ -304,7 +304,7 @@ export default {
                 const btnInput = document.querySelector("#input1")
                 const opcions  = document.querySelector("span#filtre1_options")          
                 /* Recuperem cadena del input */
-                this.FILTRE = btnInput.value
+                this.FILTRE = btnInput.value;
                 /* Seleccio principal */
                 switch(this.FILTRE_OPTIONS){
                     case ("OP1"):
@@ -314,11 +314,11 @@ export default {
                         break;
                     case ("OP2"):
                         // inclou el filtre ;
-                        this.op2(FILTRE);
+                        this.op2(this.FILTRE);
                         break;
                     case ("OP3"):
                         // inclou lletres del filtre ;
-                        this.op3(FILTRE);
+                        this.op3(this.FILTRE);
                         break;
                     default:
                         //default statement or expression;
@@ -343,8 +343,8 @@ export default {
             btnInput.value=""
             this.FILTRE_OPTIONS = event.target.attributes.value.value
             event.checked = true
-            btnInput.focus()
-            simular_output()
+            btnInput.focus();
+            this.simular_output()
         }
     },
 

@@ -80,8 +80,7 @@
         /* HOOKS !!!! */
         beforeCreate:()=>{},
         mounted:()=>{},
-        updated:()=>{},
-        beforeDestroy:()=>{}
+        updated:()=>{}
     }
 </script>
 
