@@ -39,22 +39,22 @@
 <script>
     /* Importem els elements que integrem al template */
     import MainHeader from "@/views/parts/header/MainHeader.vue";
-    import MainFooter from "@/views/parts/footer/MainFooter.vue";
+    //import MainFooter from "@/views/parts/footer/MainFooter.vue";
     import PokeCard   from "@/views/parts/pokecard/PokeCard.vue";
 
     import {
-        numeroMaximPokesV2, 
+        //numeroMaximPokesV2, 
         resumedPokePackV1,
         pokePackByArrayV2,
-        extractPokeNames,
-        extractPokeNames2
+        //extractPokeNames,
+        //extractPokeNames2
     } from "@/assets/js/libs/lib_pokeAPI.js";
 
 
 
     export default{
         name:"PageDetall.vue",
-        components:{PokeCard, MainHeader, MainFooter},
+        components:{PokeCard, MainHeader},
         props:{
             pokeID:{
                 type:String,

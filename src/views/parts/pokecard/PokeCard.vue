@@ -66,7 +66,7 @@
                         <div class="pokeTypes">
                             <div class="pTypes">
                                 <span class="pokeType0">Tipus declarats:</span><br>
-                                <span v-for = "(type1) in itemData.types1"  class="pokeType1" > [ {{ type1 }} ] </span>
+                                <span v-for = "(type1) in itemData.types1"  class="pokeType1" :key="type1"> [ {{ type1 }} ] </span>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                     <div class="pokeTypes" style="display:none">
                         <div class="pTypes">
                             <span class="pokeType0">Tipus declarats:</span><br>
-                            <span v-for = "(type1) in itemData.types1"  class="pokeType1" > [ {{ type1 }} ] </span>
+                            <span v-for = "(type1) in itemData.types1"  class="pokeType1" :key="type1"> [ {{ type1 }} ] </span>
                         </div>
                     </div>
 
@@ -265,7 +265,7 @@ export default {
             console.log("Activant render de visualitzacio ....")
             console.log("Vista demanada: ", tipusVista)
             let marcadors = document.querySelectorAll(".vistaActiva")
-            let articlesContainer="";
+            //let articlesContainer="";
             let anclaPoke="";
             switch(tipusVista)
                 {
@@ -280,6 +280,7 @@ export default {
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                                    console.log(index)
                                     if(element.classList.contains("llistat")){
                                         /* Si tenim la clase activada, mostrem el elemnt */
                                         element.style.display = "block"
@@ -301,6 +302,7 @@ export default {
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                                    console.log(index)
                                     if(element.classList.contains("detall")){
                                         /* Si tenim la clase activada, mostrem el elemnt */
                                         element.style.display = "block"
@@ -322,6 +324,7 @@ export default {
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
+                                    console.log(index)
                                     if(element.classList.contains("combat")){
                                         /* Si tenim la clase activada, mostrem el elemnt */
                                         element.style.display = "block"
@@ -355,6 +358,7 @@ export default {
                 default:        /* Sense vista definida */
                                 console.log("VISTA -> ",tipusVista)
                                 marcadors.forEach((element,index) => {
+                                    console.log(index)
                                     // Mirem cada element si te la clase "llistat" i la ctivem o apaguem
                                     element.style.display = "block"
                                 });
@@ -433,6 +437,7 @@ export default {
         },
         pokeGirarCarta(e){
             /** Funcio qeu gira la carta clickada */
+            console.log("Event->",e)
             console.log("COMBAT -> girant la carta [" + this.itemData.id + "]")
             // recuperem el selector del element sobre el qual s ha fet el click, que ens ve del event
             // canviem el stat del element

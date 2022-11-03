@@ -61,8 +61,8 @@
         numeroMaximPokesV2, 
         resumedPokePackV1,
         pokePackByArrayV2,
-        extractPokeNames,
-        extractPokeNames2
+        extractPokeNames
+        //extractPokeNames2
     } from "@/assets/js/libs/lib_pokeAPI.js"
 
     import {
@@ -131,13 +131,13 @@
                 // Crearem un objecte que si que ho sigui i el ficarem amb innerHTML ...
                 console.log("Pintem la llista de pokes ... (UP)")
                 // Apuntem els tags del html ...
-                let tagLlistat = document.querySelector("#llistatPokes")
+                //let tagLlistat = document.querySelector("#llistatPokes")
                 // afagem el array dels noms ....
                 // afagem el array dels valors ...
                 // Crearem un array amb les dades que volem imprimir, em de deixar sols els nom que tenim a la llista
                 let llistaActualitzada = []
                 let numValorsFiltre = (this.filterSortida).length;
-                let numValorsPokes  = (this.arrayPokes).length;     // que de fet es 10!!!
+                //let numValorsPokes  = (this.arrayPokes).length;     // que de fet es 10!!!
                 //console.log("valors del filtre: ",numValorsFiltre);
                 //console.log("Filtre: ", this.arrayNoms);
                 // per cada element de la llista gran, mirem si esta a la llista petita
@@ -229,7 +229,7 @@
                 /* comença igual que el filtre */
                 /* Definim varaibles locals */
                 let limitScan = 0
-                let resultat0=false
+                //let resultat0=false
                 let sortida0 = []
                 let contadorLletres = 0
                 let filtre0 = this.filterInput
@@ -241,7 +241,7 @@
                     //console.log("length input: ",   filtre0.length)
                     //console.log("length Entrada: ", entrada0.length)
                 // debuggggg out
-                let paraula0 = ""
+                //let paraula0 = ""
                 let paraula1 = []
                 /* Mirem cuants caracters em de comparar */
                 let filtre1 = filtre0.split("")
@@ -284,9 +284,10 @@
                 //this.simular_output()
             },
             filterRun: function(e){
+                console.log("event->",e)
                 // capturem els tags
                 let tagInput   = document.querySelector('#input1')
-                let tagOptions = "OP1"
+                //let tagOptions = "OP1"
                 // Obtenim els valors
                 this.filterInput = tagInput.value
                 this.filterOption = "OP1"
@@ -300,11 +301,11 @@
                             break;
                         case ("OP2"):
                             // inclou el filtre ;
-                            this.op2(FILTRE);
+                            //this.op2(FILTRE);
                             break;
                         case ("OP3"):
                             // inclou lletres del filtre ;
-                            this.op3(FILTRE);
+                            //this.op3(FILTRE);
                             break;
                         default:
                             //default statement or expression;
