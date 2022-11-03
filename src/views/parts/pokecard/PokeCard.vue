@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <!--
 // **************************************************** //
     TITOL: pokeCardV2
@@ -230,7 +231,9 @@ export default {
         console.log("Validant si te imatge ...")
         //console.log("URL1->",this.itemData.imgFrontURL)
         //console.log("URL2->",this.itemData.imgBackURL)
+        // eslint-disable-next-line vue/no-mutating-props
         this.itemData.imgFrontURL = this.validarImatges(this.itemData.imgFrontURL)
+        // eslint-disable-next-line vue/no-mutating-props
         this.itemData.imgBackURL = this.validarImatges(this.itemData.imgBackURL)
         //console.log("URL1-->",this.itemData.imgFrontURL)
         //console.log("URL2-->",this.itemData.imgBackURL)
